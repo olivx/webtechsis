@@ -1,0 +1,20 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.auth'),
+    },
+    'techcd': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'DBTESTE',
+        'HOST': 'SERVER2008',
+        'PORT': 1433,
+        'USER': 'sa',
+        'PASSWORD': 'tigre177',
+        'OPTIONS': {
+            'driver': 'FreeTDS',
+            'host_is_server': True,
+            'unicode_results': True,
+            'extra_params': 'tds_version=8.0',
+        }
+    }
+}
