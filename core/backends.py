@@ -19,10 +19,11 @@ class TechCDBackend(object):
         # se o usuario não existir no banco legado  ele estará como None
         if tech_user is not None:
             try:
-                # se ele nao existir no banco do django vai da merda aqui !
+                # se existe no auth_db , entao crie ele para mim...
                 user = User.objects.get(username=username)
-                user.check_password(password)
-                return user
+                if user.check_password(password):
+                    return user
+                return None
             except User.DoesNotExist:
 
                 # refatorar para funcção

@@ -114,12 +114,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.auth'),
     },
     'techcd': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'DBTESTE',
-        'HOST': 'SERVER2008',
-        'PORT': 1433,
-        'USER': 'sa',
-        'PASSWORD': 'tigre177',
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', cast=int),
+        'USER': config('DB_USER'),ogan
+        
+        'PASSWORD': config('DB_PASSWORD'),
         'OPTIONS': {
             'driver': 'FreeTDS',
             'host_is_server': True,
