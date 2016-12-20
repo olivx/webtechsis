@@ -118,8 +118,8 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', cast=int),
-        'USER': config('DB_USER'),ogan
-        
+        'USER': config('DB_USER'),
+
         'PASSWORD': config('DB_PASSWORD'),
         'OPTIONS': {
             'driver': 'FreeTDS',

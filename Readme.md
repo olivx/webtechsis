@@ -8,6 +8,7 @@ NOME_DO_BANCO].[DBO].[NOME_DA_TABELA, nada te empede de usar outro
 banco de dados, é só fazer as adaptações necessaria.
 
 # subindo app localmente
+```
 git clone git@github.com:olivx/webtechsis.git webtechsis
 cd webtechsis
 python -m venv .webtechsis
