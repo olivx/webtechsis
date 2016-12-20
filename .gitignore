@@ -2,6 +2,7 @@
 .idea
 .webtechsis
 *.sqlite3
+db.auth
 *pyc
 __pycache__
 staticfiles
