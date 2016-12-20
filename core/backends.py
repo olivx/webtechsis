@@ -21,7 +21,7 @@ class TechCDBackend(object):
             try:
                 # se existe no auth_db , entao crie ele para mim...
                 user = User.objects.get(username=username)
-                if user.check_password(password):
+                if user.check_password(raw_password=default_password):
                     return user
                 return None
             except User.DoesNotExist:
