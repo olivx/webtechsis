@@ -1,16 +1,16 @@
 import json
+from datetime import date
 
-from django.core import serializers
-from django.shortcuts import resolve_url as r
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse , JsonResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
+from django.shortcuts import resolve_url as r
+from django.views.decorators.csrf import csrf_exempt
 
 from core.form import LisenceADDForm
 from core.models import Clientes, PerennityLicense
-from core.form import LisenceADDForm
+
 # Create your views here.
 
 @login_required
@@ -21,11 +21,18 @@ def home(request):
 @login_required
 def license_prennity(request):
     licenses =  PerennityLicense.objects.all()
+    today = date.today()
+
+
+    for license in licenses:
+        print(license.serial , (license.valid.today() - today) )
 
     add_form = LisenceADDForm()
     context = {
         'add_form': add_form,
-        'licenses': licenses
+        'licenses': licenses,
+        'today': today
+
     }
 
     return render(request, 'license_perennity.html', context)
@@ -56,16 +63,24 @@ def save_lisence_perennity(request):
 
     if request.method == 'POST':
         form = LisenceADDForm(request.POST)
+
         if form.is_valid():
-            license = PerennityLicense.objects.create(**form.cleaned_data,tecnico=request.user)
-            print(license)
-        print(form.cleaned_data)
+            serial =  form.cleaned_data.get('serial')
+
+            try:
+                PerennityLicense.objects.get(serial=serial)
+                PerennityLicense.objects.update(**form.cleaned_data, tecnico=request.user)
+            except PerennityLicense.DoesNotExist:
+                PerennityLicense.objects.create(**form.cleaned_data,tecnico=request.user)
 
     return HttpResponseRedirect(r('licenses'))
 
-def license_detail(request, id):
-    license = PerennityLicense.objects.filter(pk=id)
-    data =  serializers.serialize('json', license)
-    return HttpResponse(data, 'application/json')
+@csrf_exempt
+def license_detail(request):
+        id = request.GET.get('license_id')
+        license = PerennityLicense.objects.filter(pk=id).values()
+        data =  list(license)
+        return JsonResponse(data, safe=False)
+
 
 

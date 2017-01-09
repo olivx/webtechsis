@@ -18,7 +18,7 @@ $(document).ready(function() {
         "last":       "Ultimo",
         "next":       "Proximo",
         "previous":   "Voltar"
-    }
+        }
     });
 
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         $('#id_cliente').autocomplete( {
                 appendTo: 'modal-add',
                 minLength: 3,
-                source: '/lisences/autocomplete/'
+                source: '/licenses/autocomplete/'
         });
     });
 
@@ -50,6 +50,7 @@ $(document).ready(function() {
     	    language: 'pt-BR',
         });
 
+
         var valid_input=$('#id_valid'); //our date input has the name "date"
         //var container_valid =$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
         valid_input.datepicker({
@@ -62,7 +63,57 @@ $(document).ready(function() {
         });
 
 
+        var csrftoken = $.cookie('csrftoken');
+
+        function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+
+            }
+        });
 
 
+
+
+
+        var value_id;
+        $(function(){
+            $('.senddetails').click(function(event){
+            event.preventDefault();
+
+                    var currentRow = $(this).closest("tr"); // get the current  row
+                    var value = currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+                    value_id = value;
+
+                $.ajax({
+                    type: "GET",
+                    url: "api/",
+                    data: {"license_id" : value_id },
+                    success: function(data) {
+
+                        $('#modal-add').modal('show');
+
+                       // id cliente
+                       $('#client_id').text(data[0].id);
+                       $('#id_cliente').val(data[0].cliente);
+                       $('#id_serial').val(data[0].serial);
+                       $('#id_mac_address').val(data[0].mac_address);
+                       $('#id_key').val(data[0].key);
+                       $('#id_installed').val(data[0].installed);
+                       $('#id_valid').val(data[0].valid);
+
+
+
+                    } // end  sucess :
+                }); // end $.ajax
+            }); //  end $('.senddetails')
+        }); // end function
 
 });

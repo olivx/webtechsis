@@ -27,10 +27,10 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='public.html'), name='public'),
     url(r'^index/$', TemplateView.as_view(template_name='index.html'), name='home'),
 
-    url(r'^lisences/$', core_views.license_prennity, name='licenses'),
-    url(r'^lisences/details/(\d+)/$', core_views.license_detail, name='licenses_details'),
-    url(r'^lisences/create/$', core_views.save_lisence_perennity, name='new_lisence'),
-    url(r'^lisences/autocomplete/$', core_views.autocomplete_clientes),
+    url(r'^licenses/$', core_views.license_prennity, name='licenses'),
+    url(r'^licenses/api/$', core_views.license_detail, name='licenses_details'),
+    url(r'^licenses/create/$', core_views.save_lisence_perennity, name='new_lisence'),
+    url(r'^licenses/autocomplete/$', core_views.autocomplete_clientes),
 
 
 

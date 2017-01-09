@@ -1,6 +1,6 @@
 from django import template
 from django.contrib.auth.models import Group
-
+from datetime import date
 register = template.Library()
 
 
@@ -10,3 +10,4 @@ def has_group(user, group_name):
     if user.is_superuser:
         return True
     return user.groups.filter(name=group_name).exists()
+

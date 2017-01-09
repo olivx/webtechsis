@@ -41,11 +41,11 @@ class GrupoUsuarios(models.Model):
 
 class PerennityLicense(models.Model):
 
-    tecnico = models.ForeignKey(User)
+    tecnico = models.ForeignKey(User, related_name='tecnicos')
 
     cliente = models.CharField('Cliente', max_length=250)
     mac_address =  models.CharField('MacAddress', max_length=250)
-    serial = models.CharField('SN',max_length=100,  null=True, blank=True)
+    serial = models.CharField('SN',max_length=100,  unique=True, null=True, blank=True)
     installed = models.DateField('Instalado', null=True, blank=True)
     valid = models.DateField('Valido', null=True, blank=True)
     key = models.TextField('Chave', null=True, blank=True)
