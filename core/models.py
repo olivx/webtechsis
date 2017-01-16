@@ -45,16 +45,22 @@ class PerennityLicense(models.Model):
 
     cliente = models.CharField('Cliente', max_length=250)
     mac_address =  models.CharField('MacAddress', max_length=250)
-    serial = models.CharField('SN',max_length=100,  unique=True, null=True, blank=True)
+    serial = models.CharField('SN',max_length=100, unique=True, null=True, blank=True)
     installed = models.DateField('Instalado', null=True, blank=True)
     valid = models.DateField('Valido', null=True, blank=True)
     key = models.TextField('Chave', null=True, blank=True)
+    active =  models.NullBooleanField(default=True)
 
     class Meta:
         ordering = ['-valid']
 
     def __str__(self):
         return '%s | %s' % (self.cliente, self.mac_address)
+
+    @property
+    def tecnico_name(self):
+        names = (self.tecnico.first_name, self.tecnico.last_name)
+        return ' '.join(names) or None
 
 class Clientes(models.Model):
         id = models.BigIntegerField(db_column='COD_CLI', primary_key=True)  # Field name made lowercase.

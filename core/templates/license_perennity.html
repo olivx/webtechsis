@@ -4,7 +4,27 @@
 {% block content  %}
 
 
+<!-- Modal -->
+  <div class="modal fade" id="alert" role="dialog">
+    <div class="modal-dialog">
 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="js-alert-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p id="js-alert-serial"></p>
+          <p id="js-alert-cliente"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 <div class="col-md-9 col-md-offset-1">
     <h1>licenças do perennity </h1>
@@ -32,10 +52,14 @@
                 <th>SERIAL</th>
                 <th>VALIDADE *</th>
                 <th>DETALHES</th>
+                {% if request.user.is_superuser %}
+                <th>DESATIVAR</th>
+                {% endif %}
             </tr>
             </thead>
 
             <tbody>
+
             {% for license in  licenses %}
             <tr class="" >
                 <td id="{{ license.id }}">{{ license.id}}</td>
@@ -43,8 +67,15 @@
                 <td >{{ license.mac_address|upper}}</td>
                 <td >{{ license.serial|upper}}</td>
                 <td >{{ license.valid|date:"d/m/Y"}}</td>
-                <td ><button class="btn btn-primary senddetails" type="submit"> DATLHES</button></td>
+
+                <td ><button class="btn btn-primary js-send_details" type="submit"> DATLHES</button></td>
+
+                {% if request.user.is_superuser %}
+                <td ><button class="btn btn-danger js-send_deactivate" type="button" data-toggle="modal"
+                             data-target="#modal-deactivate"> DESATIVAR </button></td>
+                {% endif %}
             </tr>
+
             {% endfor %}
 
             </tbody>
@@ -65,13 +96,16 @@
                     <h4 class="modal-title ">:: ADD Licença Instalada :: </h4>
                      <span id="client_label_id">ID : </span>
                      <span id="client_id"></span>
+                    <span class="pull-right" id="id_tecnico"></span>
                 </div>
 
                 <div class="modal-body">
 
+                    <div class="container-fluid">
+                        <div class="row">
 
-                    <form method="post" action="{% url 'new_lisence'  %}">
-                        {% csrf_token %}
+                    <!--<form method="post" action="{% url 'new_lisence'  %}">-->
+                    <form method="post" class="js-modal-form-add">
 
                          <div class="form-group col-sm-12">
                             {{ add_form.cliente.label_tag }}
@@ -101,14 +135,70 @@
                             {{ add_form.key }}
                          </div>
 
-                        <div class="col-md-3"><button type="submit" class="btn btn-primary btn-block" > Salvar </button></div>
+                        <div class="col-md-3">
+                            <button type="submit"
+                                    class="btn btn-primary btn-block js-send-create-or-update" >
+                                Salvar
+                            </button>
+                        </div>
 
                     </form>
 
-                </div>
+
+                        </div><!-- end row -->
+                    </div><!-- end container-fluid -->
+                </div> <!-- end modal-body -->
+
                 <div class="modal-footer">
                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<!--modal to add new objects in database  -->
+    <div id="modal-deactivate" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title ">Você está certo disso ? </h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="container-fluid">
+                        <div class="row">
+
+                    <form method="post" action="{% url 'deactivate_lisence' %}">
+                        {% csrf_token %}
+
+                                <div class="deactive_license">
+
+                                    <p class="text-left text-danger">
+                                        Você está preste a desativar essa licença , isso não deletará o elemento.
+                                        Fará com que ele seja desativado para buscas no sistema,
+                                        somente será visto atravéz do portal de administração no sistema.
+                                    </p>
+
+                                </div><!-- end deactive_licesen -->
+
+
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-danger " > confirmar  </button>
+                            <button type="button" class="btn btn-primary " data-dismiss="modal">Cancelar </button>
+                        </div><!-- end modal footer -->
+                    </form>
+
+                        </div><!-- end row -->
+                    </div><!-- end container-fluid -->
+                </div> <!-- end modal-body -->
             </div>
 
         </div>
@@ -124,6 +214,7 @@
 <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
+<script  src="{% static 'js/jquery.bsFormAlerts.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
 
 {% endblock %}
