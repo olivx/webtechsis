@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate
+from django.db.models import Q
 from django.contrib.auth.models import User , Group
-
 from core.models import TechUser, GrupoUsuarios
 
 
@@ -10,39 +10,32 @@ class TechCDBackend(object):
     def authenticate(self, username=None, password=None):
 
         # senha padrao para usuario
-        default_password = 'logan277'
+        default_password = 'tech2433'
 
         # verifica se o usuario existe.
-        tech_user = TechUser.objects.using('techcd').filter(username=username)
-
+        tech_user = TechUser.objects.using('techcd').\
+            filter(Q(username=username),Q(password=password)).first()
 
         # se o usuario não existir no banco legado  ele estará como None
-        if tech_user is not None:
-            try:
-                # se existe no auth_db , entao crie ele para mim...
-                user = User.objects.get(username=username)
-                if user.check_password(raw_password=default_password):
-                    return user
-                return None
-            except User.DoesNotExist:
-
-                # refatorar para funcção
+        if tech_user:
+            # se existe no auth_db , entao crie ele para mim...
+            user = User.objects.filter(username=username).first()
+            if user :
+                return user
+            else:
                 # quando não existir eu crio um usuario
-                user = User(username=username)
-                user.set_password(default_password)
-                user.is_active = True
-                user.save()
-
-                # refatorar para funcção
-                # set o grupo relacionado com o usuario ....
-                tech_group_user = GrupoUsuarios.objects.using('techcd').filter(groups=tech_user)[0]
-                group, created = Group.objects.get_or_create(name=tech_group_user.desc_grupo.strip())
-                _user = User.objects.get(username=username)
+                _user = User(username=username)
+                _user.set_password(default_password)
+                _user.is_active = True
+                _user.save()
+                group_user = GrupoUsuarios.objects.using('techcd').get(groups=tech_user)
+                group, created = Group.objects.get_or_create(name=group_user.desc_grupo.strip())
                 _user.groups.add(group)
                 _user.save()
 
-                return user
-        return None
+                return _user
+        else:
+            return None
 
 
 

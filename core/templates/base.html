@@ -39,9 +39,9 @@
 <body>
 
 
-{% include '_menu.html' %}
+{% include 'snippet/_menu.html' %}
 
-<div style="margin-top:50px;">
+<div class="container" style="margin-top:50px; ">
     {% block content %}
 
 
@@ -59,7 +59,7 @@
 <!-- bootstrap validation -->
 <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
 
-<!-- jquery  data table -->
+<!--&lt;!&ndash; jquery  data table &ndash;&gt;-->
 <script  src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script  src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script  src="{% static 'js/jquery.bsFormAlerts.js' %}"></script>
@@ -68,8 +68,8 @@
 
 <!-- bootstrap calendar -->
 <!-- Bootstrap Date-Picker Plugin -->
-<!--<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>-->
-<!--<script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>-->
+<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
 
 
 {% block js_extra%}

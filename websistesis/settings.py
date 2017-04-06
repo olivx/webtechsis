@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     'test_without_migrations',
     'django_extensions',
+    'widget_tweaks',
 
     'core',
 ]

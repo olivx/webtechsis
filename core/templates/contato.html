@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h1 class="page-header">Contribua com sua opinião </h1>
+
+<div class="row">
+
+    <div class="col-md-8">
+
+    <h4> Envie sua Sugestão. </h4>
+
+        <form action="{% url 'contato' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group {% if form.nome.errors %} has-error {% endif %}">
+                <label for="{{ form.nome.id_for_label }}"> {{ form.nome.label_tag }} </label>
+                {% render_field form.nome class='form-control' placeholder='Digite seu nome '%}
+                {% for error in form.nome.errors %}
+                <span class="help-block"> error </span>
+                {% endfor %}
+            </div>
+
+
+            <div class="form-group {% if form.categoria.errors %} has-error {% endif %}">
+                <label for="{{ form.categoria.id_for_label }}">{{ form.categoria.label_tag }}</label>
+                {% render_field form.categoria class='form-control'%}
+                {% for error in form.categoria.errors %}
+                <span class="help-block">{{ error}}</span>
+                {% endfor %}
+            </div>
+
+
+            <div class="form-group {% if form.assunto.errors %} has-error {% endif %}">
+                <label for="{{ form.assunto.id_for_label }}"> {{ form.assunto.label_tag }} </label>
+                {% render_field form.assunto class='form-control' placeholder='Digite o assunto que deseja falar'%}
+                {% for error in form.assunto.errors %}
+                <span class="help-block"> {{ error }} </span>
+                {% endfor %}
+            </div>
+
+
+            <div class="form-group {% if form.menssagem.errors  %} has-error {% endif %}">
+                <label for="{{ form.menssagem.id_for_label }}"> {{ form.menssagem.label_tag }}</label>
+                {% render_field form.menssagem class='form-control' %}
+                {% for error in form.menssagem.errors %}
+                <span class="help-block"> {{ error }}</span>
+                {% endfor  %}
+            </div>
+
+            <button class="btn btn-lg btn-primary" type="submit"> Enviar </button>
+        </form>
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block js_extra %}
+<!-- JQUERY EXTRAR PARA TABELAS PLUGIN https://datatables.net/-->
+<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
+
+
+{% endblock %}

@@ -1,14 +1,11 @@
 import json
-from datetime import date
+
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.shortcuts import resolve_url as r
+from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
-from django.views.decorators.csrf import csrf_exempt
-
-from core.form import LisenceADDForm
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from core.form import LicenseForm, ContactForm
 from core.models import Clientes, PerennityLicense
 
 
@@ -16,7 +13,52 @@ from core.models import Clientes, PerennityLicense
 
 @login_required
 def home(request):
+    '''Render my home page'''
     return render(request, 'index.html')
+
+def contact(request):
+    template = 'contato.html'
+
+    form = ContactForm(request.POST or None)
+    if request.POST:
+        if form.is_valid():
+            # todo envio do form e salvar ele no banco
+            # todo controle das resposta para ele
+            pass
+
+
+    else:
+        pass
+
+    print(form)
+    return render(request, template, {'form': form})
+
+
+
+@login_required
+def license_list(request):
+    '''List the objects in table table_license '''
+    licenses_list = PerennityLicense.objects.all()
+    paginator = Paginator(licenses_list, 3)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+
+    try:
+        licenses = paginator.page(page)
+
+    except(EmptyPage, InvalidPage):
+        licenses = paginator.page(paginator.num_pages)
+
+    add_form = LicenseForm()
+    context = {
+        'add_form': add_form,
+        'licenses': licenses,
+    }
+    return render(request, 'license_perennity.html', context)
+
 
 
 @login_required
@@ -25,6 +67,7 @@ def autocomplete_clientes(request):
     term = request.GET.get('term')
     if term:
         clientes = Clientes.objects.using('techcd').filter(name__contains=term)[:10]
+        print(clientes)
         results = []
         for cliente in clientes:
             json_cliente = {}
@@ -40,71 +83,86 @@ def autocomplete_clientes(request):
 
 
 @login_required
-def license_prennity(request):
-    licenses = PerennityLicense.objects.all()
-    add_form = LisenceADDForm()
-    context = {
-        'add_form': add_form,
-        'licenses': licenses,
-    }
-    return render(request, 'license_perennity.html', context)
-
-
-@login_required
-def save_lisence_perennity(request):
+def license_form_service(request, form, template, sucess_message):
     data = {}
+
+    print('GET:', request.GET)
+    print('GET:', request.POST)
+
     if request.method == 'POST':
-
-        form = LisenceADDForm(request.POST)
-        serial = None
-        license = None
         if form.is_valid():
-            serial = form.cleaned_data.get('serial')
-            try:
-                PerennityLicense.objects.get(serial=serial)
-                PerennityLicense.objects.filter(serial=serial).update(**form.cleaned_data, tecnico=request.user)
-                license = PerennityLicense.objects.get(serial=serial)
-                data['is_form_valid'] = True
-                data['method'] = 'update'
-                data['title'] = 'update realizado com sucesso!'
-            except PerennityLicense.DoesNotExist:
-                license = PerennityLicense.objects.create(**form.cleaned_data, tecnico=request.user)
-                data['is_form_valid'] = True
-                data['method'] = 'create'
-                data['title'] = 'cliente inserido com sucesso!'
+            license = form.save(commit=False)
+            license.tecnico = request.user
+            license.save()
 
+            licenses_list = PerennityLicense.objects.all()
+            # paginator = Paginator(licenses_list, 3)
+            # try:
+            #     page = int(request.GET.get('page','1'))
+            # except:
+            #     page = 1
+            # try:
+            #     licenses = paginator.page(page)
+            # except(EmptyPage, InvalidPage):
+            #     licenses = paginator.page(paginator.num_pages)
+
+            data['table_license'] = render_to_string('snippet/license_table.html',
+                                                     {'licenses': licenses_list}, request=request)
+            data['is_form_valid'] = True
+            data['js_title_message'] = sucess_message
+            data['js_cliente'] = license.cliente
+            data['js_serial'] = license.serial
         else:
             data['is_form_valid'] = False
+            data['js-message'] = 'um erro ocorreu com este formulario'
 
-        data['licenses'] = {'license': serialze(license)}
-        data['cliente'] = 'CLIENTE: %s ' % (form.cleaned_data.get('cliente'))
-        data['serial'] = 'SERIAL: %s' % (form.cleaned_data.get('serial'))
+    data['form_html'] = render_to_string(template, {'form': form})
     return JsonResponse(data)
 
 
-@property
-def tecnico(self):
-    names = (self.first_name, self.last_name)
-    return ' '.join(names) or None
+def license_save(request):
+    if request.method == 'POST':
+        print(request.POST)
+        form = LicenseForm(request.POST)
+    else:
+        form = LicenseForm()
+    return license_form_service(request, form, 'snippet/license_form_create.html', 'Licença criada com sucesso !')
 
 
+def license_update(request, pk):
+    license = get_object_or_404(PerennityLicense, pk=pk)
+
+    if request.method == 'POST':
+        form = LicenseForm(request.POST, instance=license)
+    else:
+
+        form = LicenseForm(instance=license)
+    return license_form_service(request, form, 'snippet/license_form_update.html', 'Licença alterada  com sucesso !')
+
+
+def license_delete(request, pk):
+    data = {}
+    license = get_object_or_404(PerennityLicense, pk=pk)
+
+    if request.method == 'POST':
+        license.delete()
+        licenses = PerennityLicense.objects.all()
+        data['table_license'] = render_to_string('snippet/license_table.html', {'licenses': licenses}, request=request)
+
+        data['is_form_valid'] = True
+        data['js_title_message'] = 'Licença Deletada com sucesso!'
+        data['js_cliente'] = license.cliente
+        data['js_serial'] = license.serial
+
+    else:
+        data['is_form_valid'] = False
+        data['form_html'] = render_to_string('snippet/license_form_delete.html',
+                                             {'form': LicenseForm(instance=license)}, request=request)
+
+    return JsonResponse(data)
+
+
+# def não sendo mais usanda mais vou deixar ai por enquato...  para alguma consulta sei la
 def serialze(license):
     keys = ('id', 'cliente', 'mac_address', 'serial', 'valid', 'installed', 'key', 'tecnico_name')
     return {key: getattr(license, key) for key in keys}
-
-
-@csrf_exempt
-def license_detail(request):
-    id = request.GET.get('license_id')
-    license = PerennityLicense.objects.filter(pk=id)[0]
-    data = serialze(license=license)
-    return JsonResponse(data)
-
-
-def deactivate_license_perennity(request):
-    if request.POST:
-        print(request.POST)
-        id = request.POST.get('id_license')
-        PerennityLicense.objects.filter(pk=id).update(active=False)
-
-    return HttpResponseRedirect(r('licenses'))

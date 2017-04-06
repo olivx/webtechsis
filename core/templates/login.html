@@ -12,7 +12,9 @@
                     <div class="panel-heading">
                         <div class="panel-title">Faça o Login </div>
                         <div style="float:right; font-size: 80%; position: relative; top:-1">
-                            <a href="#">Não lembra a sua senha? </a></div>
+
+                            <!--<a href="#">Não lembra a sua senha? </a>-->
+                            </div>
 
 
                         {% if messages %}
@@ -23,7 +25,7 @@
 
                         {% if form.errors %}
                         <div class="alert alert-error">
-                            <h4>Please fix the following errors</h4>
+                            <h4>Ops, Algum erro ocorreu, tem certeza que digitou usuario e senha corretamente ?</h4>
                             <ul>
                                 {% for field in form %}
                                 {% if field.errors %}
@@ -67,13 +69,13 @@
 
 
 
-                            <div class="input-group">
-                                      <div class="checkbox">
-                                        <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Manter conectato.
-                                        </label>
-                                      </div>
-                                    </div>
+                            <!--<div class="input-group">-->
+                                      <!--<div class="checkbox">-->
+                                        <!--<label>-->
+                                          <!--<input id="login-remember" type="checkbox" name="remember" value="1"> Manter conectato.-->
+                                        <!--</label>-->
+                                      <!--</div>-->
+                                    <!--</div>-->
 
 
                                 <div style="margin-top:10px" class="form-group">
@@ -91,7 +93,7 @@
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                                             você ainda não possui uma conta ?
-                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                        <a href="{% url 'contato' %}" onClick="$('#loginbox').hide(); $('#signupbox').show()">
                                             Solicite o seu acesso.
                                         </a>
                                         </div>

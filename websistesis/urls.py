@@ -11,13 +11,15 @@ urlpatterns = [
     # core urls
     url(r'^$', TemplateView.as_view(template_name='public.html'), name='public'),
     url(r'^index/$', TemplateView.as_view(template_name='index.html'), name='home'),
+    url(r'^contato/$', core_views.contact, name='contato'),
 
-    # url(r'^licenses/$', core_views.license_prennity, name='licenses'),
-    url(r'^licenses/api/$', core_views.license_prennity, name='licenses'),
-    url(r'^licenses/api/detail/$', core_views.license_detail, name='licenses_details'),
-    url(r'^licenses/api/create/$', core_views.save_lisence_perennity, name='new_lisence'),
-    url(r'^licenses/deactive/$', core_views.deactivate_license_perennity, name='deactivate_lisence'),
+    # rotas novas
     url(r'^licenses/autocomplete/$', core_views.autocomplete_clientes),
+
+    url(r'^licenses/$', core_views.license_list, name='licenses'),
+    url(r'^licenses/save/$', core_views.license_save, name='license_save'),
+    url(r'^licenses/update/(?P<pk>\d+)/$', core_views.license_update, name='license_update'),
+    url(r'^licenses/delete/(?P<pk>\d+)/$', core_views.license_delete, name='license_delete'),
 
 
 

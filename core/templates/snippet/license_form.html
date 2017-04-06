@@ -1,0 +1,49 @@
+{% load widget_tweaks %}
+
+<div class="form-group{% if form.cliente.errors %} has-error {% endif %}">
+    <label for="{{ form.cliente.id_for_label }}">{{ form.cliente.label }}</label>
+    {% render_field form.cliente class="form-control autocomplete" %}
+    {% for error in form.cliente.errors %}
+    <p class="help-block">{{ error }}</p>
+    {% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-md-6 form-group{% if form.serial.errors %} has-error {% endif %}">
+        <label for="{{ form.serial.id_for_label }}">{{ form.serial.label }}</label>
+        {% render_field form.serial class="form-control" %}
+        {% for error in form.serial.errors %}
+        <p class="help-block">{{ error }}</p>
+        {% endfor %}
+    </div>
+    <div class="col-md-6 form-group{% if form.mac_address.errors %} has-error {% endif %}">
+        <label for="{{ form.mac_adress.id_for_label }}">{{ form.mac_address.label }}</label>
+        {% render_field form.mac_address class="form-control" %}
+        {% for error in form.mac_address.errors %}
+        <p class="help-block">{{ error }}</p>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6 form-group{% if form.installed.errors %} has-error {% endif %}">
+    <label for="{{ form.installed.id_for_label }}">{{ form.installed.label }}</label>
+    {% render_field form.installed class="form-control calender" %}
+    {% for error in form.installed.errors %}
+    <p class="help-block">{{ error }}</p>
+    {% endfor %}
+</div>
+<div class="col-md-6 form-group{% if form.valid.errors %} has-error {% endif %}">
+    <label for="{{ form.valid.id_for_label }}">{{ form.valid.label }}</label>
+    {% render_field form.valid class="form-control calender" %}
+    {% for error in form.valid.errors %}
+    <p class="help-block">{{ error }}</p>
+    {% endfor %}
+</div>
+</div>
+<div class="form-group{% if form.key.errors %} has-error {% endif %}">
+    <label for="{{ form.key.id_for_label }}">{{ form.key.label }}</label>
+    {% render_field form.key class="form-control" rows="3" %}
+    {% for error in form.key.errors %}
+    <p class="help-block">{{ error }}</p>
+    {% endfor %}
+</div>

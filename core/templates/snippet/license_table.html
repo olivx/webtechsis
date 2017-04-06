@@ -1,0 +1,19 @@
+{% for license in  licenses %}
+
+<tr class="" >
+        <td id="{{ license.id }}">{{ license.id}}</td>
+        <td class="client_clicked">{{ license.cliente|upper}}</td>
+        <td >{{ license.mac_address|upper}}</td>
+        <td >{{ license.serial|upper}}</td>
+        <td >{{ license.valid|date:"d/m/Y"}}</td>
+
+        <td ><button class="btn btn-warning js-license-update" type="button" data-url="{% url 'license_update' license.id %}">
+        <span class="glyphicon glyphicon-pencil"> </span>
+        </button></td>
+
+        <td ><button class="btn btn-danger js-license-delete" type="button" data-url="{% url 'license_delete' license.id %}">
+            <span class="glyphicon glyphicon-trash"> </span>
+        </button></td>
+    </tr>
+
+{% endfor %}

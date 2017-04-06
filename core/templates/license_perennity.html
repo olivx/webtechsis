@@ -4,208 +4,104 @@
 {% block content  %}
 
 
-<!-- Modal -->
-  <div class="modal fade" id="alert" role="dialog">
+<h1 class="page-header">licenças do perennity </h1>
+
+<p>
+    <button id="add-license" class="btn btn-primary js-modal-form" data-url="{% url 'license_save' %}">
+        <span class="glyphicon glyphicon-plus"></span>
+        Linsença
+    </button>
+
+</p>
+
+
+<div class="modal fade" id="modal-message" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" id="js-alert-title"></h4>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="js-message"></h4>
+            </div>
+            <div class="modal-body">
+
+                <strong>Serial:</strong> <p id="js-serial" class="lead"></p>
+                <strong>Cliente:</strong> <p id="js-cliente" class="lead"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <p id="js-alert-serial"></p>
-          <p id="js-alert-cliente"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
 
     </div>
-  </div>
-
-<div class="col-md-9 col-md-offset-1">
-    <h1>licenças do perennity </h1>
+</div>
 
 
-    <div style="margin-bottom:30px; margin-top:30px;">
-        <a role="button" class="btn btn-primary" href="#modal-add" data-toggle="modal">
-            ADD Linsença instalada
-        </a>
-    </div>
 
-    <div id="result">
-
-    </div>
-
-    <!--  tabela de licenças -->
-    <div class="container">
-        <form>
-        <table id="lisence_table" class="table table-striped table-condensed table-hover" width="100%" cellspacing="0">
+<!--  tabela de licenças -->
+<div style="margin-top:2em">
+    <form>
+        <table id="license_table" class="table table-striped table-condensed table-hover" width="100%" cellspacing="0">
             <thead>
             <tr>
-                <th>ID *</th>
+                <th>#</th>
                 <th>CLIENTE *</th>
                 <th>MAC ADRESS *</th>
                 <th>SERIAL</th>
                 <th>VALIDADE *</th>
-                <th>DETALHES</th>
-                {% if request.user.is_superuser %}
-                <th>DESATIVAR</th>
-                {% endif %}
+                <th></th>
+                <th></th>
             </tr>
             </thead>
 
             <tbody>
 
-            {% for license in  licenses %}
-            <tr class="" >
-                <td id="{{ license.id }}">{{ license.id}}</td>
-                <td class="client_clicked">{{ license.cliente|upper}}</td>
-                <td >{{ license.mac_address|upper}}</td>
-                <td >{{ license.serial|upper}}</td>
-                <td >{{ license.valid|date:"d/m/Y"}}</td>
-
-                <td ><button class="btn btn-primary js-send_details" type="submit"> DATLHES</button></td>
-
-                {% if request.user.is_superuser %}
-                <td ><button class="btn btn-danger js-send_deactivate" type="button" data-toggle="modal"
-                             data-target="#modal-deactivate"> DESATIVAR </button></td>
-                {% endif %}
-            </tr>
-
-            {% endfor %}
+            {% include 'snippet/license_table.html'%}
 
             </tbody>
         </table>
-        </form>
-    </div> <!-- fim  tabela de licenças -->
 
 
-    <!--modal to add new objects in database  -->
-    <div id="modal-add" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title ">:: ADD Licença Instalada :: </h4>
-                     <span id="client_label_id">ID : </span>
-                     <span id="client_id"></span>
-                    <span class="pull-right" id="id_tecnico"></span>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="container-fluid">
-                        <div class="row">
-
-                    <!--<form method="post" action="{% url 'new_lisence'  %}">-->
-                    <form method="post" class="js-modal-form-add">
-
-                         <div class="form-group col-sm-12">
-                            {{ add_form.cliente.label_tag }}
-                            {{ add_form.cliente }}
-                         </div>
-
-                        <div class="form-group col-sm-6"> <!-- Date input -->
-                            {{ add_form.installed.label_tag }}
-                            {{ add_form.installed }}
-                        </div>
-
-                        <div class="form-group col-sm-6"> <!-- Date input -->
-                            {{ add_form.valid.label_tag }}
-                            {{ add_form.valid }}
-                        </div>
-
-                         <div class="form-group col-sm-6">
-                            {{ add_form.mac_address.label_tag }}
-                            {{ add_form.mac_address }}
-                         </div>
-                         <div class="form-group col-sm-6">
-                            {{ add_form.serial.label_tag }}
-                            {{ add_form.serial }}
-                         </div>
-                         <div class="form-group col-sm-12">
-                            {{ add_form.key.label_tag}}
-                            {{ add_form.key }}
-                         </div>
-
-                        <div class="col-md-3">
-                            <button type="submit"
-                                    class="btn btn-primary btn-block js-send-create-or-update" >
-                                Salvar
-                            </button>
-                        </div>
-
-                    </form>
+        {% if licenses.has_other_pages %}
+        <ul class="pagination">
+            {% if licenses.has_previous %}
+            <li><a href="?page={{ licenses.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in licenses.paginator.page_range %}
+            {% if licenses.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+            <li><a  class="paginator" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if licenses.has_next %}
+            <li><a href="?page={{ licenses.next_page_number }}">&raquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
 
 
-                        </div><!-- end row -->
-                    </div><!-- end container-fluid -->
-                </div> <!-- end modal-body -->
-
-                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    </form>
+</div> <!-- fim  tabela de licenças -->
 
 
 <!--modal to add new objects in database  -->
-    <div id="modal-deactivate" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title ">Você está certo disso ? </h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="container-fluid">
-                        <div class="row">
-
-                    <form method="post" action="{% url 'deactivate_lisence' %}">
-                        {% csrf_token %}
-
-                                <div class="deactive_license">
-
-                                    <p class="text-left text-danger">
-                                        Você está preste a desativar essa licença , isso não deletará o elemento.
-                                        Fará com que ele seja desativado para buscas no sistema,
-                                        somente será visto atravéz do portal de administração no sistema.
-                                    </p>
-
-                                </div><!-- end deactive_licesen -->
+<div id="modal-license" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
 
 
-                        <div class="modal-footer">
-
-                            <button type="submit" class="btn btn-danger " > confirmar  </button>
-                            <button type="button" class="btn btn-primary " data-dismiss="modal">Cancelar </button>
-                        </div><!-- end modal footer -->
-                    </form>
-
-                        </div><!-- end row -->
-                    </div><!-- end container-fluid -->
-                </div> <!-- end modal-body -->
-            </div>
 
         </div>
     </div>
-
 </div>
-
 
 {% endblock  %}
 

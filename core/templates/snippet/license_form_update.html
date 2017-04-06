@@ -1,0 +1,24 @@
+<form action="{% url 'license_update' form.instance.pk  %}" method="post" class="js-form-license-update" >
+    {% csrf_token %}
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <h4 class="modal-title ">:: {% block title_modal %} UPDATE  LICENÇA {% endblock %}:: </h4>
+
+        <span id="client_label_id"> </span>
+        <span id="client_id"></span>
+        <span class="pull-right" id="id_tecnico"></span>
+    </div>
+
+    <div class="modal-body">
+
+        {% include 'snippet/license_form.html' %}
+
+    </div> <!-- end modal-body -->
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-warning js-form-license-update">Alterar!</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</form>

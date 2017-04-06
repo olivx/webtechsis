@@ -1,0 +1,27 @@
+<form action="{% url 'license_delete' form.instance.pk %}" method="POST" class="js-form-license-delete" >
+    {% csrf_token %}
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <h4 class="modal-title ">:: {% block title_modal %} DELETAR  LICENÇA {% endblock %}:: </h4>
+
+        <span id="client_label_id"> </span>
+        <span id="client_id"></span>
+        <span class="pull-right" id="id_tecnico"></span>
+    </div>
+
+    <div class="modal-body">
+
+
+        {% include 'snippet/license_form.html' %}
+
+
+
+    </div> <!-- end modal-body -->
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger js-form-license-delete">Deletar!</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</form>
