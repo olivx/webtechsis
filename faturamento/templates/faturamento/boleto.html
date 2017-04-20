@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content%}
+<div class="moda-dialog">
+    <div class="modal-content">
+        <form  action="{% url 'boletos:boleto_update' form.instance.nnum_bol %}" method="post" class="js-form-update-boleto">
+            {% csrf_token %}
+
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal"
+                        onclick="window.history.back()" type="button">&times</button>
+                <h3 class="help-block"> Boleto <strong>{{ empresa }}</strong></h3>
+                {% render_field form.empresa  value=empresa %}
+            </div><!-- modal-header -->
+
+            <div class="modal-body">
+
+                {% if messages %}
+
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button class="close" data-dismiss="alert" type="button" aria-label="fechar">
+                        <span aria-hidden="true" >&times;</span>
+                    </button>
+
+                    {{ message }}
+                </div>
+                {% endfor %}
+
+                {% endif %}
+
+
+                <div class="row">
+
+                    <div class="col-md-2" >
+                        <div class="form-group {% if form.nnum_bol.errors %} has-error {% endif %}">
+                            <label for="{{ form.nnum_bol.id_for_label }}">{{ form.nnum_bol.label_tag }}</label>
+                            {% render_field form.nnum_bol  class="form-control"  disabled="True" %}
+                            {% for error in form.nnum_bol.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div> <!--  numm_bol -->
+
+                    <div class="col-md-2">
+                        <div class="form-group {% if form.numdoc_bol.errors %} has-error {% endif %}">
+                            <label for="{{ form.numdoc_bol.id_for_label }}">{{ form.numdoc_bol.label_tag }}</label>
+                            {% render_field form.numdoc_bol class="form-control" disabled="True" %}
+                            {% for error in form.numdoc_bol.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div><!--  numdoc_bol -->
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group {% if form.numdoc_bol.errors %} has-error {% endif %}">
+                            <label for="{{ form.sac_bol.id_for_label }}"> {{ form.sac_bol.label_tag }}</label>
+                            {% render_field form.sac_bol class="form-control" disabled="True" %}
+                            {% for error in form.sac_bol.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div> <!--  sacado -->
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="{{ form.data_bol.id_for_label }}">{{ form.data_bol.label_tag }}</label>
+                            {% render_field form.data_bol class="form-control calender" disabled="True" %}
+                            {% for error in form.data_bol.errors %}
+                            <span class="help-block"> {{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div><!-- data de emissao -->
+
+                    <div class="col-md-2">
+                        <div class="form-group {% if form.venc_bol.errors %} has-error {% endif %}">
+                            <label for="{{ form.venc_bol.id_for_label }}">{{ form.venc_bol.label_tag }}</label>
+                            {% render_field form.venc_bol class="form-control calender" %}
+                            {%for error in form.venc_bol.errors %}
+                            <span class="help-bloc">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div><!--  vencimento -->
+
+                    <div class="col-md-2">
+                        <div class="form-group {% if form.val_bol.errors %} has-error {% endif %}">
+                            <label for="{{ form.val_bol.id_for_label }}">{{ form.val_bol.label_tag }}</label>
+                            {% render_field form.val_bol class="form-control" %}
+                            {%for error in form.val_bol.errors %}
+                            <span class="help-bloc">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div><!--  vencimento -->
+
+
+                </div><!--  row -->
+            </div><!-- modal-body -->
+
+            <div class="modal-footer">
+                <button class="btn btn-primary " onclick="window.history.back()"
+                        type="button"> voltar </button>
+
+                <button class="btn btn-warning" type="submit" >
+                    Alterar
+                </button>
+
+            </div><!-- modal-footer -->
+        </form><!-- fomulario -->
+    </div><!-- modal-content -->
+</div><!-- modal-dialog -->
+
+
+
+
+
+{% endblock %}
+
+{% block js_extra %}
+<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from django.views.generic import TemplateView
@@ -11,6 +11,7 @@ urlpatterns = [
     # core urls
     url(r'^$', TemplateView.as_view(template_name='public.html'), name='public'),
     url(r'^index/$', TemplateView.as_view(template_name='index.html'), name='home'),
+    url(r'^contato/enviado/$', TemplateView.as_view(template_name='snippet/obrigado-pelo-contato.html'), name='obrigado_pelo_contato'),
     url(r'^contato/$', core_views.contact, name='contato'),
 
     # rotas novas
@@ -22,6 +23,8 @@ urlpatterns = [
     url(r'^licenses/delete/(?P<pk>\d+)/$', core_views.license_delete, name='license_delete'),
 
 
+    # faturamento
+    url(r'^boletos/' , include('faturamento.urls', namespace='boletos')),
 
 
     # auth urls

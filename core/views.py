@@ -2,11 +2,14 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, resolve_url
 from django.template.loader import render_to_string
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.core.mail import send_mail
 from core.form import LicenseForm, ContactForm
 from core.models import Clientes, PerennityLicense
+
 
 
 # Create your views here.
@@ -16,22 +19,24 @@ def home(request):
     '''Render my home page'''
     return render(request, 'index.html')
 
+
 def contact(request):
     template = 'contato.html'
-
     form = ContactForm(request.POST or None)
     if request.POST:
         if form.is_valid():
-            # todo envio do form e salvar ele no banco
-            # todo controle das resposta para ele
-            pass
+            contact = form.save(commit=False)
+            if request.user.is_authenticated:
+                contact.user = request.user
+            contact.save()
+            body = render_to_string('snippet/contato.txt', {'contato' : contact })
+            send_mail(contact.assunto, body ,
+                      'thiago@techcd.com.br', ['thiago@techcd.com.br'])
 
+            return HttpResponseRedirect(resolve_url('obrigado_pelo_contato'))
 
-    else:
-        pass
-
-    print(form)
     return render(request, template, {'form': form})
+
 
 
 
@@ -58,7 +63,6 @@ def license_list(request):
         'licenses': licenses,
     }
     return render(request, 'license_perennity.html', context)
-
 
 
 @login_required

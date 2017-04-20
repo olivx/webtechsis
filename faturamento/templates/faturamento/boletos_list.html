@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h1 class="page-header">Boletos</h1>
+
+<div class="row">
+
+    <form action="" method="GET" >
+        {% csrf_token %}
+
+
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="input-group">
+
+                        <input id="table-input" name="search" type="Search" placeholder="Pesquisar ..."
+                               class="form-control" onkeypress="searchTable()"
+                               pattern="[0-9]*" required
+                               title="Há! esse campo so aceita numeros, Digite o numero da NFE relacionada ao Boleto"/>
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-success" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div><!-- input de busca -->
+
+
+                <div class="pull-right col-md-4">
+
+
+                    <div class="radio-inline">
+                        <label><input type="radio" name="radio-empresa"
+                                      {% if empresa == 'tech' %} checked {% endif %}
+                                      value="tech" required>TechCD</label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label><input type="radio" name="radio-empresa"
+                                        {% if empresa == 'data' %} checked {% endif %}
+                                      value="data">Data Store</label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label><input type="radio" name="radio-empresa"
+                                        {% if empresa == 'midia' %} checked {% endif %}
+                                      value="midia">Midia Center</label>
+                    </div>
+
+                </div><!-- radios options-->
+
+
+            </div><!-- row -->
+        </div><!-- form-group -->
+    </form><!-- form -->
+</div><!-- row -->
+
+<div class="row" style="">
+
+    <table id="table-contact" class="table table-striped table-hover table-sm">
+        <thead class="thead-inverse">
+        <tr>
+            <th colspan="4"></th>
+        </tr>
+        <tr class="bg-success">
+            <th>#</th>
+            <th>DOCUMENTO</th>
+            <th>CLIENTE </th>
+            <th>Vencimeto</th>
+            <th>Valor</th>
+            <th>Editar</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for boleto in boletos %}
+        <tr>
+            <th scope="row">{{ boleto.nnum_bol }}</th>
+            <td>{{ boleto.numdoc_bol }}</td>
+            <td>{{ boleto.sac_bol }}</td>
+            <td>{{ boleto.venc_bol |date:"d/m/y"}}</td>
+            <td>{{ boleto.val_bol}}</td>
+            <td>
+                <a href="{{ boleto.get_absolute_url }}" role="button" class="btn btn-small btn-warning">
+                    Editar
+                </a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <th colspan="6" class="bg-warning text-center"> Não foi encontrado nenhum resultado</th>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if boletos.has_other_pages %}
+    <ul class="pagination">
+        {% if boletos.has_previous %}
+        <li><a href="?page={{ boletos.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in boletos.paginator.page_range %}
+        {% if boletos.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if boletos.has_next %}
+        <li><a href="?page={{ boletos.next_page_number }}">&raquo;</a></li>
+        {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}
+
+{% block js_extra %}
+<!-- JQUERY EXTRAR PARA TABELAS PLUGIN https://datatables.net/-->
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
+<script  src="{% static 'js/jquery.bsFormAlerts.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
+<script>
+
+function searchTable() {
+  // Declare variables
+   var input, filter, table, tr, td, i;
+    input = document.getElementById("table-input");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table-contact");
+    tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+{% endblock %}

@@ -29,7 +29,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                  aria-expanded="false">FATURAMENTO<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Boletos</a></li>
+                <li><a href="{% url 'boletos:boletos_list' %}">Boletos</a></li>
                 <li><a href="#">Update Nfe</a></li>
 
                   <!--
@@ -81,7 +81,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <!-- The Profile picture inserted via div class below, with shaping provided by Bootstrap -->
                         <div class="img-rounded profile-img"></div>
-                        {{ request.user }}
+                        {{ request.user|upper }}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

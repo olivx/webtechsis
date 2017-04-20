@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 from decouple import config , Csv
+from django.contrib import messages
 from django.shortcuts import resolve_url as r
 import os
 
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'core',
+    'faturamento',
 ]
 
 MIDDLEWARE = [
@@ -95,6 +97,15 @@ WSGI_APPLICATION = 'websistesis.wsgi.application'
 
 
 
+MESSAGE_TAGS = {
+
+    messages.INFO: 'alert-info',
+    messages.DEBUG: 'alert-info',
+    messages.ERROR: 'alert-danger',
+    messages.WARNING: 'alert-warning',
+    messages.SUCCESS: 'alert-success',
+}
+
 # entender por que não funcionou !
 # LOGIN_REDIRECT_URL = r('home')
 LOGIN_REDIRECT_URL = '/index/'
@@ -126,7 +137,7 @@ DATABASES = {
             'driver': 'FreeTDS',
             'host_is_server': True,
             'unicode_results': True,
-            'extra_params': 'tds_version=8.0',
+            'extra_params': 'TDS_VERSION=8.0',
         }
     }
 }
@@ -170,3 +181,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+

@@ -1,0 +1,15 @@
+
+
+Contato de : {% if contato.nome is None %} ANONIMO {% else %} {{ contato.nome }} {% endif %}
+Categoria {{ contato.get_categoria_display }}
+Enviado : {{ contato.created }}
+
+Menssagem:
+{{ contato.menssagem }}
+
+
+essa é uma messagem automatica, em caso de duvida ao reclamação você pode entrar em
+contato com o thiago das seguintes formas:
+skype: olvieiravicente.net
+celular|whatsapp 11 97051-3508
+telefone: 3677-6655 R:233

@@ -30,36 +30,7 @@ $.ajaxSetup({
     }
 });
 
-
-    /* data table */
-//   var table = $('#license_table').DataTable({
-//
-//        "order": [[ 0, "desc" ]],
-//        "pageLength": 5,
-//        "lengthMenu": [3, 5, 10, 25, 50, 75, 100 ],
-//        "language": {
-//            "lengthMenu": " _MENU_ registros por pagina",
-//            "zeroRecords": "Nenhum registro encontrado, desculpe",
-//            "info": "_PAGE_ de _PAGES_",
-//            "infoEmpty": "sem registros ",
-//            "infoFiltered": "(filtro de  _MAX_ total )"
-//        },
-//           "language": {
-//             "Search": "Pesquisar ",
-//             "lengthMenu": "Mostrar _MENU_ registro por paginas",
-//             "zeroRecords": "não há registros",
-//             "info": "Mosnrando registro _PAGE_ de _PAGES_",
-//             "infoEmpty": "Nenhum resuldado foi encontrado",
-//             "infoFiltered": "(filtradno de _MAX_ total de registros)",
-//
-//             "paginate": {
-//                "next": "Próxima",
-//                "previous": "Anterior"
-//                 }
-//            }
-//    });
-
-
+// pagina perennity licence
 
     $('.paginator').click(function(){
         var page = $(this);
@@ -100,9 +71,6 @@ $.ajaxSetup({
                     minLength: 3,
                     source: '/licenses/autocomplete/'
                 });
-
-
-
             },
         });
     };
@@ -152,6 +120,29 @@ $.ajaxSetup({
     // Delete License
     $('#license_table').on('click' , '.js-license-delete' , loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-delete', saveFormLicense);
+
+
+// page boletos
+    //remendo os disabled dos campos para o subimit
+    $('.js-form-update-boleto').submit(function(){
+        $(".js-form-update-boleto :disabled").removeAttr('disabled');
+    });
+
+    // submiting
+    $('input[name=radio-empresa]').change(function(){
+        $('form').submit();
+    });
+
+    // formatando campo com calendario
+    $('.calender').datepicker({
+        format: 'dd/mm/yyyy',
+        todayHighlight: true,
+        autoclose: true,
+        orientation: "bottom auto",
+        language: 'pt-BR',
+     });
+
+
 
 
 });
