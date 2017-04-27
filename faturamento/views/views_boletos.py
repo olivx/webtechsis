@@ -3,7 +3,9 @@ from django.contrib import messages
 from django.db.models import Q
 
 from faturamento.forms import BoletoTechForm, BoletoDataForm, BoletoMidiaForm
-from faturamento.models import BoletoData, BoletoMidia, BoletoTech
+from faturamento.models import BoletoData, BoletoMidia, BoletoTech, ItemNfeSaidaPagtoDataSRV, ItemNfeSaidaPagtoData, \
+    ItemNfeSaidaPagtoMidiaSRV, ItemNfeSaidaPagtoMidia
+from faturamento.models import ItemNfeSaidaPagtoTech, ItemNfeSaidaPagtoTechSRV
 
 
 def get_boletos(request, empresa):
@@ -37,7 +39,7 @@ def boleto_list(request):
 
     boleto_list = get_boletos(request, empresa)
 
-    context = {'boletos': boleto_list , 'empresa': empresa}
+    context = {'boletos': boleto_list, 'empresa': empresa}
     return render(request, template, context)
 
 
@@ -50,7 +52,7 @@ def boleto_tech_detail(request, nnum_bol):
 def boleto_data_detail(request, nnum_bol):
     boleto = get_object_or_404(BoletoData.objects.using('techcd'), nnum_bol=nnum_bol)
     form = BoletoDataForm(instance=boleto)
-    return render(request, 'faturamento/boleto.html', {'form': form , 'empresa': 'Data Store'})
+    return render(request, 'faturamento/boleto.html', {'form': form, 'empresa': 'Data Store'})
 
 
 def boleto_midia_detail(request, nnum_bol):
@@ -60,51 +62,49 @@ def boleto_midia_detail(request, nnum_bol):
 
 
 def boleto_update(request, nnum_bol):
-
     empresa = request.POST.get('empresa')
 
     # verifica de qual empresa é para montar o form
     if empresa == 'TechCD':
         boleto = get_object_or_404(BoletoTech.objects.using('techcd'), nnum_bol=nnum_bol)
         form = BoletoTechForm(request.POST, instance=boleto)
+        if boleto.ind_tip_nfe_srv:
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoTechSRV.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol , datavencnf_saida_pagto=boleto.venc_bol)
+        else:
+
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoTech.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol, datavencnf_saida_pagto=boleto.venc_bol)
+
 
     elif empresa == 'Data Store':
         boleto = get_object_or_404(BoletoData.objects.using('techcd'), nnum_bol=nnum_bol)
         form = BoletoDataForm(request.POST, instance=boleto)
+        if boleto.ind_tip_nfe_srv:
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoDataSRV.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol , datavencnf_saida_pagto=boleto.venc_bol)
+        else:
+
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoData.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol, datavencnf_saida_pagto=boleto.venc_bol)
     else:
         boleto = get_object_or_404(BoletoMidia.objects.using('techcd'), nnum_bol=nnum_bol)
         form = BoletoDataForm(request.POST, instance=boleto)
+        if boleto.ind_tip_nfe_srv:
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoMidiaSRV.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol , datavencnf_saida_pagto=boleto.venc_bol)
+        else:
+
+            item_pag = get_object_or_404(ItemNfeSaidaPagtoMidia.objects.using('techcd'),
+                                         cod_nf_saida=boleto.numdoc_bol, datavencnf_saida_pagto=boleto.venc_bol)
 
         # salva o boleto
     if form.is_valid():
-        form.save()
+        bol = form.save()
+        item_pag.datavencnf_saida_pagto = bol.venc_bol
+        item_pag.save()
         messages.success(request, 'NFe {0}  da  {1}  Alterada  com Sucesso!'.format(boleto.numdoc_bol, empresa))
 
+        # atulizado o item de pagamento
 
-    return render(request, 'faturamento/boleto.html', {'form' : form })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render(request, 'faturamento/boleto.html', {'form': form})

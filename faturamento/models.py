@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import resolve_url
 
+
 # Create your models here.
 
 class BoletoAbstract(models.Model):
@@ -35,7 +36,7 @@ class BoletoData(BoletoAbstract):
 
     class Meta:
         managed = False
-        db_table = 'TECHCD].[DBO].[BOLETOS_DATA_NFE'
+        db_table = 'BOLETOS_DATA_NFE'
 
 class BoletoMidia(BoletoAbstract):
     def get_absolute_url(self):
@@ -43,7 +44,7 @@ class BoletoMidia(BoletoAbstract):
 
     class Meta:
         managed = False
-        db_table = 'TECHCD].[DBO].[BOLETOS_MIDIA_NFE'
+        db_table = 'BOLETOS_MIDIA_NFE'
 
 class BoletoTech(BoletoAbstract):
 
@@ -52,7 +53,71 @@ class BoletoTech(BoletoAbstract):
 
     class Meta:
         managed = False
-        db_table = 'TECHCD].[DBO].[BOLETOS_TECHCD_NFE'
+        db_table = 'BOLETOS_TECHCD_NFE'
+
+
+class ItmNfeSaidaPagtoAbstract(models.Model):
+    cod_nf_saida = models.BigIntegerField(db_column='COD_NF_SAIDA', primary_key=True)  # Field name made lowercase.
+    parcnf_saida_pagto = models.DecimalField(db_column='PARCNF_SAIDA_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    cod_pagto = models.IntegerField(db_column='COD_PAGTO', blank=True, null=True)  # Field name made lowercase.
+    cod_frmpagto = models.IntegerField(db_column='COD_FRMPAGTO', blank=True, null=True)  # Field name made lowercase.
+    valnf_saida_pagto = models.DecimalField(db_column='VALNF_SAIDA_PAGTO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    realnf_saida_pagto = models.DecimalField(db_column='REALNF_SAIDA_PAGTO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    datavencnf_saida_pagto = models.DateTimeField(db_column='DATAVENCNF_SAIDA_PAGTO', blank=True, null=True)  # Field name made lowercase.
+    dataquitnf_saida_pagto = models.DateTimeField(db_column='DATAQUITNF_SAIDA_PAGTO', blank=True, null=True)  # Field name made lowercase.
+    quemquitnf_saida_pagto = models.CharField(db_column='QUEMQUITNF_SAIDA_PAGTO', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    cod2_pagto = models.BigIntegerField(db_column='COD2_PAGTO', blank=True, null=True)  # Field name made lowercase.
+    cod2_frmpagto = models.BigIntegerField(db_column='COD2_FRMPAGTO', blank=True, null=True)  # Field name made lowercase.
+    cod_banco = models.BigIntegerField(db_column='COD_BANCO', blank=True, null=True)  # Field name made lowercase.
+    chqnf_saida_pagto = models.CharField(db_column='CHQNF_SAIDA_PAGTO', max_length=20, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        abstract = True
+        verbose_name = 'Item NFe Saida'
+        verbose_name = 'Itens NFe Saida'
+
+    def __str__(self):
+        return str(self.cod_nf_saida)
+
+
+class ItemNfeSaidaPagtoTech(ItmNfeSaidaPagtoAbstract):
+
+    class Meta:
+        managed = False
+        db_table =  'ITM_NFE_SAIDA_PAGTO'
+
+class ItemNfeSaidaPagtoData(ItmNfeSaidaPagtoAbstract):
+
+    class Meta:
+        managed = False
+        db_table =  'ITM_NFE_SAIDA_PAGTO_DATA'
+
+class ItemNfeSaidaPagtoMidia(ItmNfeSaidaPagtoAbstract):
+
+    class Meta:
+        managed = False
+        db_table =  'ITM_NFE_SAIDA_PAGTO_MIDIA'
+
+
+class ItemNfeSaidaPagtoTechSRV(ItmNfeSaidaPagtoAbstract):
+    class Meta:
+        managed = False
+        db_table = 'ITM_NFE_SAIDA_PAGTO_SRV'
+
+
+class ItemNfeSaidaPagtoDataSRV(ItmNfeSaidaPagtoAbstract):
+    class Meta:
+        managed = False
+        db_table = 'ITM_NFE_SAIDA_PAGTO_DATA_SRV'
+
+
+class ItemNfeSaidaPagtoMidiaSRV(ItmNfeSaidaPagtoAbstract):
+    class Meta:
+        managed = False
+        db_table = 'ITM_NFE_SAIDA_PAGTO_MIDIA_SRV'
+
+
+
 
 
 
