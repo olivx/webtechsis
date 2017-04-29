@@ -1,15 +1,15 @@
 import json
 
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, resolve_url
-from django.template.loader import render_to_string
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
-from django.core.mail import send_mail
-from core.form import LicenseForm, ContactForm
+from django.contrib.auth.decorators import login_required
+from django.template.loader import render_to_string
 from core.models import Clientes, PerennityLicense
-
+from django.http import HttpResponse, JsonResponse
+from core.form import LicenseForm, ContactForm
+from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.db.models import Q
 
 
 # Create your views here.
@@ -43,9 +43,18 @@ def contact(request):
 @login_required
 def license_list(request):
     '''List the objects in table table_license '''
-    licenses_list = PerennityLicense.objects.all()
-    paginator = Paginator(licenses_list, 3)
 
+    search = request.GET.get('lisence-search')
+
+    if search ==  None or search == '':
+        licenses_list = PerennityLicense.objects.all().order_by('-id')
+
+    else:
+        licenses_list = PerennityLicense.objects.filter(Q(cliente__contains=search) |
+                                                        Q(mac_address__contains=search) |
+                                                        Q(serial__contains=search)).order_by('-id')
+
+    paginator = Paginator(licenses_list, 3)
     try:
         page = int(request.GET.get('page', '1'))
     except:
