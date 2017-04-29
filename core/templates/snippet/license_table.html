@@ -1,6 +1,13 @@
+{%load utils_extras %}
 {% for license in  licenses %}
 
-<tr class="" >
+<tr class="
+
+{% if license.valid|valid_danger %} bg-danger {% endif %}
+{% if license.valid|valid_warning %} bg-warning {% endif %}
+{% if license.valid|valid_success %} bg-success {% endif %}
+
+" >
         <td id="{{ license.id }}">{{ license.id}}</td>
         <td class="client_clicked">{{ license.cliente|upper}}</td>
         <td >{{ license.mac_address|upper}}</td>
