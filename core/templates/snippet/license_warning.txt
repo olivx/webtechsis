@@ -1,0 +1,19 @@
+Suporte, existe uma licença há vencer, por favor , entrar em contato com cliente ates que isso aconteça !
+
+Cliente : {{ license.cliente }}
+Mac Address {{ license.mac_address  }}
+Validade : {{ license.valid }}
+Instalado em: {{ license.installed }}
+
+
+SN: {{ license.serial }}
+
+Licença:
+{{ license.key }}
+
+
+essa é uma messagem automatica, em caso de duvida ao reclamação você pode entrar em
+contato com o thiago das seguintes formas:
+skype: olvieiravicente.net
+celular|whatsapp 11 97051-3508
+telefone: 3677-6655 R:233

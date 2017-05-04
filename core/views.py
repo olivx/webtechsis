@@ -80,7 +80,6 @@ def autocomplete_clientes(request):
     term = request.GET.get('term')
     if term:
         clientes = Clientes.objects.using('techcd').filter(name__contains=term)[:10]
-        print(clientes)
         results = []
         for cliente in clientes:
             json_cliente = {}
@@ -98,9 +97,6 @@ def autocomplete_clientes(request):
 @login_required
 def license_form_service(request, form, template, sucess_message):
     data = {}
-
-    print('GET:', request.GET)
-    print('GET:', request.POST)
 
     if request.method == 'POST':
         if form.is_valid():
@@ -135,7 +131,6 @@ def license_form_service(request, form, template, sucess_message):
 
 def license_save(request):
     if request.method == 'POST':
-        print(request.POST)
         form = LicenseForm(request.POST)
     else:
         form = LicenseForm()

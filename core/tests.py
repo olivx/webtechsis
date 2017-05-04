@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.auth.models import User, Group
 from django.core import mail
 from django.shortcuts import resolve_url
@@ -5,7 +7,8 @@ from django.test import TestCase
 
 from core.backends import authenticate
 from core.form import ContactForm
-from core.models import TechUser, GrupoUsuarios, Contact
+from core.models import TechUser, GrupoUsuarios, Contact, PerennityLicense
+from core.scripts import services
 
 
 class TestBanckEndAutenticate(TestCase):

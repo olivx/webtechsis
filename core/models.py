@@ -93,10 +93,6 @@ class PerennityLicense(models.Model):
         return ' '.join(names) or None
 
 
-    @property
-    def valid_date(self, valid):
-        print(self.valid)
-
 
 class Clientes(models.Model):
     id = models.BigIntegerField(db_column='COD_CLI', primary_key=True)  # Field name made lowercase.
