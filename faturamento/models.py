@@ -2,7 +2,8 @@ from django.db import models
 from django.shortcuts import resolve_url
 
 
-# Create your models here.
+
+
 
 class BoletoAbstract(models.Model):
     nnum_bol = models.BigIntegerField('CODIGO BOLETO',db_column='NNum_Bol', primary_key=True)  # Field name made lowercase.
@@ -57,6 +58,13 @@ class BoletoTech(BoletoAbstract):
 
 
 class ItmNfeSaidaPagtoAbstract(models.Model):
+    class Meta:
+        abstract = True
+        verbose_name = 'Item NFe Saida'
+        verbose_name = 'Itens NFe Saida'
+
+        unique_together = ('cod_nf_saida', 'datavencnf_saida_pagto')
+
     cod_nf_saida = models.BigIntegerField(db_column='COD_NF_SAIDA', primary_key=True)  # Field name made lowercase.
     parcnf_saida_pagto = models.DecimalField(db_column='PARCNF_SAIDA_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
     cod_pagto = models.IntegerField(db_column='COD_PAGTO', blank=True, null=True)  # Field name made lowercase.
@@ -71,13 +79,12 @@ class ItmNfeSaidaPagtoAbstract(models.Model):
     cod_banco = models.BigIntegerField(db_column='COD_BANCO', blank=True, null=True)  # Field name made lowercase.
     chqnf_saida_pagto = models.CharField(db_column='CHQNF_SAIDA_PAGTO', max_length=20, blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        abstract = True
-        verbose_name = 'Item NFe Saida'
-        verbose_name = 'Itens NFe Saida'
+
 
     def __str__(self):
-        return str(self.cod_nf_saida)
+        return '{0} - {1} - {2}'.format(str(self.cod_nf_saida), str(self.datavencnf_saida_pagto), str(self.valnf_saida_pagto))
+
+
 
 
 class ItemNfeSaidaPagtoTech(ItmNfeSaidaPagtoAbstract):

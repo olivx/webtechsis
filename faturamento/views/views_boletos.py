@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.db import transaction
 from django.db.models import Q
 
 from faturamento.forms import BoletoTechForm, BoletoDataForm, BoletoMidiaForm
@@ -101,8 +102,34 @@ def boleto_update(request, nnum_bol):
         # salva o boleto
     if form.is_valid():
         bol = form.save()
-        item_pag.datavencnf_saida_pagto = bol.venc_bol
-        item_pag.save()
+        # item_pag.datavencnf_saida_pagto = bol.venc_bol
+
+        _instance  =  type(item_pag)
+        _instance.objects.using('techcd').\
+            filter(Q(cod_nf_saida=item_pag.cod_nf_saida) &
+                   Q(datavencnf_saida_pagto=item_pag.datavencnf_saida_pagto)).\
+            update(datavencnf_saida_pagto=bol.venc_bol, valnf_saida_pagto=bol.val_bol)
+
+
+
+        # '''
+        # update na tabela de itens de pagamentos
+        # preciso ser feito com metodo raw pois a tabela não possui campo unico primary_key
+        # entao resolver fazer do mesmo modo que fazia via sql
+        # '''
+        # instance = type(item_pag)
+        # obj = instance.objects.raw(
+        #     '''
+        #     UPDATE  %s  set datavencnf_saida_pagto = %s , valnf_saida_pagto = %s
+        #     where cod_nf_saida = %s and ereand = %s
+        #     ''' , ([instance.objects.model._meta.db_table,
+        #             item_pag.datavencnf_saida_pagto,
+        #             bol.venc_bol,
+        #             item_pag.cod_nf_saida,
+        #             item_pag.datavencnf_saida_pagto]))
+        # transaction.commit_
+        # print('obj=', obj)
+
         messages.success(request, 'NFe {0}  da  {1}  Alterada  com Sucesso!'.format(boleto.numdoc_bol, empresa))
 
         # atulizado o item de pagamento

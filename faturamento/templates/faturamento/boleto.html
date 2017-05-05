@@ -87,7 +87,7 @@
                     <div class="col-md-2">
                         <div class="form-group {% if form.val_bol.errors %} has-error {% endif %}">
                             <label for="{{ form.val_bol.id_for_label }}">{{ form.val_bol.label_tag }}</label>
-                            {% render_field form.val_bol class="form-control" %}
+                            {% render_field form.val_bol class="form-control" pattern="^\d+(?:\.\d{1,2})?$" title="Campo decimal , exemplo 0.00 , utiliza somente ponto para as casas decimais" %}
                             {%for error in form.val_bol.errors %}
                             <span class="help-bloc">{{ error }}</span>
                             {% endfor %}
@@ -120,5 +120,7 @@
 {% block js_extra %}
 <script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrapValidator.js' %}"></script>
+<script  src="{% static 'js/jquery.bsFormAlerts.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
 {% endblock %}
