@@ -7,3 +7,6 @@ db.auth
 __pycache__
 staticfiles
 .ipynb_checkpoints/
+nginx.conf
+start.sh
+supervisor.conf
