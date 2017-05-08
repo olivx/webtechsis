@@ -5,7 +5,8 @@
 {% block content%}
 <div class="moda-dialog">
     <div class="modal-content">
-        <form  action="{% url 'boletos:boleto_update' form.instance.nnum_bol %}" method="post" class="js-form-update-boleto">
+        <form  action="{% url 'boletos:boleto_update' form.instance.nnum_bol %}" method="post"
+               class="js-form-update-boleto" data-toggle="validator">
             {% csrf_token %}
 
             <div class="modal-header">
@@ -79,7 +80,7 @@
                             <label for="{{ form.venc_bol.id_for_label }}">{{ form.venc_bol.label_tag }}</label>
                             {% render_field form.venc_bol class="form-control calender" %}
                             {%for error in form.venc_bol.errors %}
-                            <span class="help-bloc">{{ error }}</span>
+                            <span class="help-block">{{ error }}</span>
                             {% endfor %}
                         </div>
                     </div><!--  vencimento -->
@@ -89,7 +90,7 @@
                             <label for="{{ form.val_bol.id_for_label }}">{{ form.val_bol.label_tag }}</label>
                             {% render_field form.val_bol class="form-control" pattern="^\d+(?:\.\d{1,2})?$" title="Campo decimal , exemplo 0.00 , utiliza somente ponto para as casas decimais" %}
                             {%for error in form.val_bol.errors %}
-                            <span class="help-bloc">{{ error }}</span>
+                            <span class="help-block">{{ error }}</span>
                             {% endfor %}
                         </div>
                     </div><!--  vencimento -->
