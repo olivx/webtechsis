@@ -1,3 +1,4 @@
+{% load utils_extras %}
 <form action="{% url 'license_update' form.instance.pk  %}" method="post" class="js-form-license-update" >
     {% csrf_token %}
 
@@ -18,7 +19,9 @@
     </div> <!-- end modal-body -->
 
     <div class="modal-footer">
+        {% if request.user|has_group:"SUPORTE" %}
         <button type="submit" class="btn btn-warning js-form-license-update">Alterar!</button>
+        {% endif %}
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 </form>
