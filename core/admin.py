@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from core.form import LicenseForm
 from core.models import PerennityLicense, Contact
 
 
@@ -11,4 +12,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(PerennityLicense)
 class PerennityLicense(admin.ModelAdmin):
-    pass
+    form = LicenseForm

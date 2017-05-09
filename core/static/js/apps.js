@@ -91,8 +91,6 @@ $.ajaxSetup({
                     $('#license_table tbody').html(data.table_license);
                     $('#modal-license').modal('hide')
 
-                    table.columns.adjust().draw();
-
                     $('#js-message').text(data.js_title_message)
                     $('#js-serial').text(data.js_serial)
                     $('#js-cliente').text(data.js_cliente)

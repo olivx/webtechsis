@@ -54,23 +54,31 @@ class Contact(models.Model):
     )
 
     nome = models.CharField(max_length=50, null=True, blank=True)
-    categoria =  models.IntegerField(choices=TIPO_CATEGORIAS, default=SUGESTAO)
-    assunto = models.CharField(max_length=100,)
-    menssagem =  models.TextField()
-    data_created =  models.DateTimeField(auto_now_add=True)
-    user =  models.ForeignKey(User, default=0 , null=True, blank=True)
+    categoria = models.IntegerField(choices=TIPO_CATEGORIAS, default=SUGESTAO)
+    assunto = models.CharField(max_length=100, )
+    menssagem = models.TextField()
+    data_created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, default=0, null=True, blank=True)
+
     class Meta:
         ordering = ['-data_created']
-        verbose_name =  'Contato'
-        verbose_name_plural  = 'Contatos'
+        verbose_name = 'Contato'
+        verbose_name_plural = 'Contatos'
 
     def __str__(self):
         return self.assunto
 
 
-
-
 class PerennityLicense(models.Model):
+    TRIAL = 0
+    DEMO = 1
+    FULL = 2
+    STATUS_LICENSE = (
+        (TRIAL, 'Amostra'),
+        (DEMO, 'Demonstração'),
+        (FULL, 'Licenciado'),
+    )
+
     tecnico = models.ForeignKey(User, related_name='tecnicos')
 
     cliente = models.CharField('Cliente', max_length=250)
@@ -80,6 +88,7 @@ class PerennityLicense(models.Model):
     valid = models.DateField('Valido', null=True, blank=True)
     key = models.TextField('Chave', null=True, blank=True)
     active = models.NullBooleanField(default=True)
+    tipo_license = models.PositiveIntegerField('Status', choices=STATUS_LICENSE, default=TRIAL)
 
     class Meta:
         ordering = ['-valid']
@@ -91,7 +100,6 @@ class PerennityLicense(models.Model):
     def tecnico_name(self):
         names = (self.tecnico.first_name, self.tecnico.last_name)
         return ' '.join(names) or None
-
 
 
 class Clientes(models.Model):

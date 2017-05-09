@@ -125,7 +125,7 @@ def license_form_service(request, form, template, sucess_message):
             data['is_form_valid'] = False
             data['js-message'] = 'um erro ocorreu com este formulario'
 
-    data['form_html'] = render_to_string(template, {'form': form})
+    data['form_html'] = render_to_string(template, {'form': form}, request=request)
     return JsonResponse(data)
 
 
@@ -143,7 +143,6 @@ def license_update(request, pk):
     if request.method == 'POST':
         form = LicenseForm(request.POST, instance=license)
     else:
-
         form = LicenseForm(instance=license)
     return license_form_service(request, form, 'snippet/license_form_update.html', 'Licença alterada  com sucesso !')
 
