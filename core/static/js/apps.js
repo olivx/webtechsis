@@ -106,8 +106,39 @@ $.ajaxSetup({
     };
 
 
-    // Create license
+    // parar de mandar avisos
+   $('#modal-license').on('click', '.js-send-warning', function (){
 
+        var form = $('.js-form-license-update');
+
+        $.ajax({
+            url:  '/licenses/stop_send_warning/',
+            type: 'post',
+            data: form.serialize(),
+            dataType: 'json',
+
+            success: function(data){
+                $('#modal-license').modal('hide');
+
+                 $('#js-message').text(data.js_title_message)
+                 $('#js-serial').text(data.js_serial)
+                 $('#js-cliente').text(data.js_cliente)
+
+                 $('#modal-message').modal('show');
+            },
+             error: function (request, status, error) {
+                alert(error);
+            }
+        });
+
+        return false;
+
+    });
+
+
+
+
+    // Create license
     $('.js-modal-form').click(loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-save', saveFormLicense);
 
@@ -118,6 +149,7 @@ $.ajaxSetup({
     // Delete License
     $('#license_table').on('click' , '.js-license-delete' , loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-delete', saveFormLicense);
+
 
 
 // page boletos

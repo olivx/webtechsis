@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^licenses/autocomplete/$', core_views.autocomplete_clientes),
 
     url(r'^licenses/$', core_views.license_list, name='licenses'),
+    url(r'^licenses/stop_send_warning/$', core_views.licese_stop_send_warning, name='stop_send_warning'),
     url(r'^licenses/save/$', core_views.license_save, name='license_save'),
     url(r'^licenses/update/(?P<pk>\d+)/$', core_views.license_update, name='license_update'),
     url(r'^licenses/delete/(?P<pk>\d+)/$', core_views.license_delete, name='license_delete'),

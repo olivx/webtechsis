@@ -19,9 +19,18 @@
     </div> <!-- end modal-body -->
 
     <div class="modal-footer">
+
+        {% if request.user|has_group:"SUPORTE ADMIN" %}
+        <button type="submit" class="btn btn-default js-send-warning" data-url="{% url 'stop_send_warning' %}">
+            Parar de enviar avisos!
+        </button>
+        {% endif %}
+
         {% if request.user|has_group:"SUPORTE" %}
         <button type="submit" class="btn btn-warning js-form-license-update">Alterar!</button>
         {% endif %}
+
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 </form>
+

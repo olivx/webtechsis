@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from django.shortcuts import render, get_object_or_404, resolve_url
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
@@ -29,15 +30,13 @@ def contact(request):
             if request.user.is_authenticated:
                 contact.user = request.user
             contact.save()
-            body = render_to_string('snippet/contato.txt', {'contato' : contact })
-            send_mail(contact.assunto, body ,
+            body = render_to_string('snippet/contato.txt', {'contato': contact})
+            send_mail(contact.assunto, body,
                       'thiago@techcd.com.br', ['thiago@techcd.com.br'])
 
             return HttpResponseRedirect(resolve_url('obrigado_pelo_contato'))
 
     return render(request, template, {'form': form})
-
-
 
 
 @login_required
@@ -46,7 +45,7 @@ def license_list(request):
 
     search = request.GET.get('lisence-search')
 
-    if search ==  None or search == '':
+    if search == None or search == '':
         licenses_list = PerennityLicense.objects.all().order_by('-id')
 
     else:
@@ -165,6 +164,25 @@ def license_delete(request, pk):
         data['is_form_valid'] = False
         data['form_html'] = render_to_string('snippet/license_form_delete.html',
                                              {'form': LicenseForm(instance=license)}, request=request)
+
+    return JsonResponse(data)
+
+
+def licese_stop_send_warning(request):
+    data = {}
+
+    if request.method == 'POST':
+        license = PerennityLicense.objects.filter(Q(cliente=request.POST.get('cliente')) &
+                                                  Q(serial=request.POST.get('serial')) &
+                                                  Q(mac_address=request.POST.get('mac_address'))
+                                                  ).first()
+        license.nao_enviar_aviso = True
+        license.data_ultimo_aviso = datetime.now()
+        license.save()
+
+        data['js_title_message'] = 'Emails de Aviso ão serão mais enviado! '
+        data['js_cliente'] = license.cliente
+        data['js_serial'] = license.serial
 
     return JsonResponse(data)
 

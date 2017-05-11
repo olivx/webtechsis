@@ -11,7 +11,8 @@ class LicenseForm(forms.ModelForm):
 
     class Meta:
         model = PerennityLicense
-        fields = ('cliente', 'mac_address','tecnico', 'tipo_license', 'serial', 'valid', 'installed', 'key',)
+        fields = ('cliente','active' ,'mac_address','tecnico',
+                 'tipo_license', 'serial', 'valid', 'installed', 'key',)
 
 
 class ContactForm(forms.ModelForm):

@@ -8,11 +8,11 @@
 {% if license.valid|valid_success %} bg-success {% endif %}
 
 " >
-        <td id="{{ license.id }}">{{ license.id}}</td>
-        <td class="client_clicked">{{ license.cliente|upper}}</td>
-        <td >{{ license.mac_address|upper}}</td>
-        <td >{{ license.serial|upper}}</td>
-        <td >{{ license.valid|date:"d/m/Y"}}</td>
+        <td data-column="#">{{ license.id}}</td>
+        <td data-column="cliente *">{{ license.cliente|upper}}</td>
+        <td data-column="mac address *">{{ license.mac_address|upper}}</td>
+        <td data-column="serial ">{{ license.serial|upper}}</td>
+        <td data-column="validade *">{{ license.valid|date:"d/m/Y"}}</td>
 
         <td ><button class="btn btn-warning js-license-update" type="button" data-url="{% url 'license_update' license.id %}">
                 <span class="glyphicon glyphicon-pencil"> </span>

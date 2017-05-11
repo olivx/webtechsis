@@ -62,52 +62,55 @@
 
 <!--  tabela de licenças -->
 <div style="margin-top:2em">
-    <form>
-        <table id="license_table" class="table table-condensed table-hover" width="100%" cellspacing="0">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>CLIENTE *</th>
-                <th>MAC ADRESS *</th>
-                <th>SERIAL</th>
-                <th>VALIDADE *</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
+    <!--<div class="table-responsive">-->
 
-            <tbody>
+        <form>
+            <table id="license_table" class="table table-condensed table-hover" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th >#</th>
+                    <th >CLIENTE *</th>
+                    <th >MAC ADDRESS *</th>
+                    <th >SERIAL</th>
+                    <th >VALIDADE *</th>
+                    <th ></th>
+                    <th ></th>
+                </tr>
+                </thead>
 
-            {% include 'snippet/license_table.html'%}
+                <tbody>
 
-            </tbody>
-        </table>
+                {% include 'snippet/license_table.html'%}
+
+                </tbody>
+            </table>
 
 
-        {% if licenses.has_other_pages %}
-        <ul class="pagination">
-            {% if licenses.has_previous %}
-            <li><a href="?page={{ licenses.previous_page_number }}">&laquo;</a></li>
-            {% else %}
-            <li class="disabled"><span>&laquo;</span></li>
+            {% if licenses.has_other_pages %}
+            <ul class="pagination">
+                {% if licenses.has_previous %}
+                <li><a href="?page={{ licenses.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in licenses.paginator.page_range %}
+                {% if licenses.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a  class="paginator" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if licenses.has_next %}
+                <li><a href="?page={{ licenses.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
             {% endif %}
-            {% for i in licenses.paginator.page_range %}
-            {% if licenses.number == i %}
-            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-            {% else %}
-            <li><a  class="paginator" href="?page={{ i }}">{{ i }}</a></li>
-            {% endif %}
-            {% endfor %}
-            {% if licenses.has_next %}
-            <li><a href="?page={{ licenses.next_page_number }}">&raquo;</a></li>
-            {% else %}
-            <li class="disabled"><span>&raquo;</span></li>
-            {% endif %}
-        </ul>
-        {% endif %}
 
 
-    </form>
+        </form>
+    <!--</div>-->
 </div> <!-- fim  tabela de licenças -->
 
 
