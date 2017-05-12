@@ -53,7 +53,7 @@ def license_list(request):
                                                         Q(mac_address__contains=search) |
                                                         Q(serial__contains=search)).order_by('-id')
 
-    paginator = Paginator(licenses_list, 3)
+    paginator = Paginator(licenses_list, 5)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -104,18 +104,18 @@ def license_form_service(request, form, template, sucess_message):
             license.save()
 
             licenses_list = PerennityLicense.objects.all()
-            # paginator = Paginator(licenses_list, 3)
-            # try:
-            #     page = int(request.GET.get('page','1'))
-            # except:
-            #     page = 1
-            # try:
-            #     licenses = paginator.page(page)
-            # except(EmptyPage, InvalidPage):
-            #     licenses = paginator.page(paginator.num_pages)
+            paginator = Paginator(licenses_list, 5)
+            try:
+                page = int(request.GET.get('page','1'))
+            except:
+                page = 1
+            try:
+                licenses = paginator.page(page)
+            except(EmptyPage, InvalidPage):
+                licenses = paginator.page(paginator.num_pages)
 
             data['table_license'] = render_to_string('snippet/license_table.html',
-                                                     {'licenses': licenses_list}, request=request)
+                                                     {'licenses': licenses}, request=request)
             data['is_form_valid'] = True
             data['js_title_message'] = sucess_message
             data['js_cliente'] = license.cliente

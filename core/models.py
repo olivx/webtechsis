@@ -27,7 +27,6 @@ class TechUser(models.Model):
         managed = False
         db_table = 'TECHCD].[DBO].[USUARIOS'
 
-
 class GrupoUsuarios(models.Model):
     cod_grupo = models.BigIntegerField(primary_key=True)
     desc_grupo = models.CharField(max_length=20, blank=True, null=True)
@@ -38,7 +37,6 @@ class GrupoUsuarios(models.Model):
 
     def __str__(self):
         return self.desc_grupo
-
 
 class Contact(models.Model):
     SUGESTAO = 1
@@ -67,7 +65,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.assunto
-
 
 class PerennityLicense(models.Model):
     TRIAL = 0
@@ -102,10 +99,6 @@ class PerennityLicense(models.Model):
     def tecnico_name(self):
         names = (self.tecnico.first_name, self.tecnico.last_name)
         return ' '.join(names) or None
-
-
-
-
 
 class Clientes(models.Model):
     id = models.BigIntegerField(db_column='COD_CLI', primary_key=True)  # Field name made lowercase.

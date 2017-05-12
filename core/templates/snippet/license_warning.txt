@@ -1,5 +1,8 @@
 Suporte, existe uma licença há vencer, por favor , entrar em contato com cliente ates que isso aconteça !
 
+para acessar o sistema, utilize a url: http://suporte4u:8000
+(faça o logon com o usuario do sistech)
+
 Cliente : {{ license.cliente }}
 Mac Address {{ license.mac_address  }}
 Validade : {{ license.valid }}
