@@ -1,6 +1,7 @@
 from django.test import TestCase
 
-from core.models import Contact
+from core.models import Contact, Produtos
+from model_mommy import mommy
 
 
 class TestModelContact(TestCase):
@@ -11,7 +12,14 @@ class TestModelContact(TestCase):
                                           assunto='teste de formulario', menssagem='Messangem teste')
         self.assertTrue(contatct)
 
-
+# class TestProdutos(TestCase):
+#     multi_db = True
+#
+#     def test_produtos_has_categorias(self):
+#         '''Test if produtos has categoria'''
+#         produto =  mommy.make(Produtos)
+#         print(produto)
+#
 
 
 

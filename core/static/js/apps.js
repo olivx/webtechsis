@@ -32,18 +32,17 @@ $.ajaxSetup({
 
 // pagina perennity licence
 
-    $('.paginator').click(function(){
-        var page = $(this);
-        $.ajax({
-            url:    '/' + page.attr('href'),
-            type:  'GET',
-            success: function(data){
-
-                alert('');
-
-            },
-        });
-    });
+//    $('.paginator').click(function(){
+//        var page = $(this);
+//        $.ajax({
+//            url:    '/' + page.attr('href'),
+//            type:  'GET',
+//            success: function(data){
+//
+//
+//            },
+//        });
+//    });
 
 
 
