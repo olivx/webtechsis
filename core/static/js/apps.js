@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 
-
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -30,24 +29,10 @@ $.ajaxSetup({
     }
 });
 
-// pagina perennity licence
-
-//    $('.paginator').click(function(){
-//        var page = $(this);
-//        $.ajax({
-//            url:    '/' + page.attr('href'),
-//            type:  'GET',
-//            success: function(data){
-//
-//
-//            },
-//        });
-//    });
-
-
 
     var loadFormLicense =  function (){
         var btn = $(this)
+
         $.ajax({
             url:    btn.attr('data-url'),
             type:  'GET',
@@ -68,7 +53,7 @@ $.ajaxSetup({
                 $('.autocomplete').autocomplete( {
                     appendTo: 'modal-license',
                     minLength: 3,
-                    source: '/licenses/autocomplete/'
+                    source: '/core/cliente/autocomplete/'
                 });
             },
         });
@@ -133,9 +118,6 @@ $.ajaxSetup({
         return false;
 
     });
-
-
-
 
     // Create license
     $('.js-modal-form').click(loadFormLicense);

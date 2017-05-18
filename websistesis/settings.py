@@ -33,16 +33,6 @@ DEBUG = config('DEBUG' , default=False , cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
-# e-mail configurations
-# EMAIL_BACKEND=
-# EMAIL_HOST=
-# EMAIL_PORT=
-# EMAIL_USE_TLS=
-# EMAIL_HOST_USER=
-# EMAIL_HOST_PASSWORD=
-
-
-
 
 # Application definition
 
@@ -60,6 +50,7 @@ INSTALLED_APPS = [
     'gunicorn',
 
     'core',
+    'suporte',
     'faturamento',
 
 ]
@@ -108,8 +99,7 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
 }
 
-# entender por que não funcionou !
-# LOGIN_REDIRECT_URL = r('home')
+
 LOGIN_REDIRECT_URL = '/index/'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
@@ -133,7 +123,6 @@ DATABASES = {
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', cast=int),
         'USER': config('DB_USER'),
-
         'PASSWORD': config('DB_PASSWORD'),
         'OPTIONS': {
             'driver': 'FreeTDS',
@@ -143,8 +132,6 @@ DATABASES = {
         }
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

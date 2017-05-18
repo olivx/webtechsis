@@ -3,7 +3,6 @@ from django.contrib.auth.models import Group
 from django.test import TestCase
 
 class TestBanckEndAutenticate(TestCase):
-
     def setUp(self):
         self.username = 'thiagooliveira'
         self.password = 'logan'

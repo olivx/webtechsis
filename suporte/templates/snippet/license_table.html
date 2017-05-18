@@ -14,11 +14,11 @@
         <td data-column="serial ">{{ license.serial|upper}}</td>
         <td data-column="validade *">{{ license.valid|date:"d/m/Y"}}</td>
 
-        <td ><button class="btn btn-warning js-license-update" type="button" data-url="{% url 'license_update' license.id %}">
+        <td ><button class="btn btn-warning js-license-update" type="button" data-url="{% url 'suporte:license_update' license.id %}">
                 <span class="glyphicon glyphicon-pencil"> </span>
         </button></td>
 
-        <td ><button class="btn btn-danger js-license-delete" type="button" data-url="{% url 'license_delete' license.id %}">
+        <td ><button class="btn btn-danger js-license-delete" type="button" data-url="{% url 'suporte:license_delete' license.id %}">
                 <span class="glyphicon glyphicon-trash"> </span>
         </button></td>
     </tr>

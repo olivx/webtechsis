@@ -1,11 +1,11 @@
 {% load utils_extras %}
-<form action="{% url 'license_update' form.instance.pk  %}" method="post" class="js-form-license-update" >
+<form action="{% url 'suporte:license_delete' form.instance.pk %}" method="POST" class="js-form-license-delete" >
     {% csrf_token %}
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-        <h4 class="modal-title ">:: {% block title_modal %} UPDATE  LICENÇA {% endblock %}:: </h4>
+        <h4 class="modal-title ">:: {% block title_modal %} DELETAR  LICENÇA {% endblock %}:: </h4>
 
         <span id="client_label_id"> </span>
         <span id="client_id"></span>
@@ -16,21 +16,13 @@
 
         {% include 'snippet/license_form.html' %}
 
+
     </div> <!-- end modal-body -->
 
     <div class="modal-footer">
-
         {% if request.user|has_group:"SUPORTE ADMIN" %}
-        <button type="submit" class="btn btn-default js-send-warning" data-url="{% url 'stop_send_warning' %}">
-            Parar de enviar avisos!
-        </button>
+        <button type="submit" class="btn btn-danger js-form-license-delete">Deletar!</button>
         {% endif %}
-
-        {% if request.user|has_group:"SUPORTE" %}
-        <button type="submit" class="btn btn-warning js-form-license-update">Alterar!</button>
-        {% endif %}
-
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 </form>
-

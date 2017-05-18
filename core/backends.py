@@ -9,6 +9,7 @@ class TechCDBackend(object):
 
     def authenticate(self, username=None, password=None):
 
+
         # senha padrao para usuario
         default_password = 'tech2433'
 
