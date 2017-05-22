@@ -16,7 +16,6 @@ def serialze(license):
     keys = ('id', 'cliente', 'mac_address', 'serial', 'valid', 'installed', 'key', 'tecnico_name')
     return {key: getattr(license, key) for key in keys}
 
-
 @login_required
 def license_list(request):
     '''List the objects in table table_license '''
