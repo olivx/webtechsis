@@ -73,7 +73,6 @@ class Clientes(models.Model):
     class Meta:
         managed = False
         db_table = 'TECHCD].[DBO].[CLIENTES'
-        # ordering = ['-name']
 
     def __str__(self):
         return self.name
@@ -172,13 +171,13 @@ class ClientePytech(models.Model):
     comments = models.TextField(null=True, blank=True)
     active = models.NullBooleanField(default=False)
     tipo = models.PositiveIntegerField('Ramo', default=HOSPITAL, choices=TIPO_CLIENTE)
-    created = models.DateTimeField(now_add=True, auto_now_add=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
-        ordering = [-'created']
+        ordering = ['-created']
 
     def __str__(self):
         return '{} ({})'.format(self.name, self.nick_name)
