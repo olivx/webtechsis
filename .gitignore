@@ -11,3 +11,4 @@ nginx.conf
 start.sh
 supervisor.conf
 staticfiles/
+htmlcov/
