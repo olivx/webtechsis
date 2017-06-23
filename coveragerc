@@ -1,0 +1,12 @@
+[run]
+source = core, suporte, faturamento, webtecjsis
+omit =
+    core/tests/*.py
+    core/migrations/*.py
+    core/apps.py
+    faturamento/tests/*.py
+    faturamento/migrations/*.py
+    suporte/apps.py/tests/*.py
+    suporte/migrations/*.py
+    suporte/apps.py
+    websistesis/wsgi.py
