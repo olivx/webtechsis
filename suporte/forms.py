@@ -1,4 +1,6 @@
 from django import forms
+
+from core.models import Produtos
 from suporte.models import PerennityLicense
 from django.contrib.auth.models import User
 
@@ -13,3 +15,4 @@ class LicenseForm(forms.ModelForm):
         model = PerennityLicense
         fields = ('cliente','active' ,'mac_address','tecnico',
                  'tipo_license', 'serial', 'valid', 'installed', 'key',)
+

@@ -1,0 +1,22 @@
+{% load widget_tweaks %}
+
+<div class="">
+    <div class="form-group  {% if form.desc.erros  %} has-error {% endif %}">
+        <label for="form.desc.id_for_label">{{ form.desc.label_tag }}</label>
+        {% render_field form.desc class="form-control autocomplete"%}
+        {% for error in form.desc.errors %}
+            <span class="help-block">{{ error }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="form-group  {% if form.sn.erros  %} has-error {% endif %}">
+        <label for="form.sn.id_for_label">{{ form.sn.label_tag }}</label>
+        {% render_field form.sn class="form-control"%}
+        {% for error in form.sn.errors %}
+            <span class="help-block">{{ error }}</span>
+        {% endfor %}
+    </div>
+
+
+
+</div>

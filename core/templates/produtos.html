@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<h1 class="page-header"> Produtos </h1>
+
+
+
+
+<div class="row">
+
+    <div class="row">
+
+        <div class="form-group">
+            <button id="add-produto" type="button" class="btn btn-primary js-modal-prodtudos"  data-url="{% url 'techcd:save_produtos' %}">
+                <span class="glyphicon glyphicon-plus"></span>
+                Produtos
+            </button>
+        </div>
+
+        <form action="" method="GET" >
+            {% csrf_token %}
+
+
+
+            <div class="col-md-6" style="margin-bottom:2em">
+                <div class="row">
+                    <form action="" method="get" class="">
+                        <div class="input-group">
+                            <input name="lisence-search" type="text" class="form-control"
+                                   placeholder="Pesquisar por: Cliente, Mac Address ou Serial "
+                                   autofocus />
+
+                            <span class="input-group-btn">
+                     <button class="btn btn-primary" type="submit">
+                         <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                 </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<div class="row" style="">
+
+    <table id="produto-table" class="table table-condensed table-hover">
+        <thead class="thead-inverse">
+        <tr>
+            <th colspan="4"></th>
+        </tr>
+        <tr class="bg-success">
+            <th>#</th>
+            <th>DESCRIÇÃO</th>
+            <th>SERIAL NUMBER </th>
+            <th>EDIT</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% include 'produtos/produto_table.html' %}
+
+        </tbody>
+    </table>
+
+    {% include 'pagination.html' with object=produto %}
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-produtos" tabindex="-1" role="dialog"
+     aria-labelledby="modal-produtos" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js_extra %}
+<!-- JQUERY EXTRAR PARA TABELAS PLUGIN https://datatables.net/-->
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/locales/bootstrap-datepicker.pt-BR.js' %}"></script>
+<script  src="{% static 'js/jquery.bsFormAlerts.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/apps.js' %}"></script>
+<script>
+
+function searchTable() {
+  // Declare variables
+   var input, filter, table, tr, td, i;
+    input = document.getElementById("table-input");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table-contact");
+    tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+{% endblock %}
+

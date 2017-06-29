@@ -1,10 +1,8 @@
-# Create your models here.
 from django.contrib.auth.models import User
 from django.db import models
 
 
 class TechUser(models.Model):
-    # cod_niv = models.ForeignKey('Niveis', models.DO_NOTHING, db_column='COD_NIV')  # Field name made lowercase.
     cod_grupo = models.OneToOneField('GrupoUsuarios', db_column='COD_GRUPO', blank=True, null=True,
                                      related_name='groups')  # Field name made lowercase.
     username = models.CharField(db_column='NOME_USER', primary_key=True, max_length=30,
@@ -116,9 +114,9 @@ class Produtos(models.Model):
     '''
     list_cod_cat = [174, 42, 45, 46, 49, 52, 62, 63, 64, 68, 69, 71]
 
-    cod_prod = models.BigIntegerField(db_column='COD_PROD', primary_key=True)  # Field name made lowercase.
-    desc_prod = models.CharField(db_column='DESC_PROD', max_length=300, blank=True,
-                                 null=True)  # Field name made lowercase.
+    id = models.BigIntegerField(db_column='COD_PROD', primary_key=True)  # Field name made lowercase.
+    name = models.CharField(db_column='DESC_PROD', max_length=300, blank=True,
+                            null=True)  # Field name made lowercase.
     min_prod = models.IntegerField(db_column='MIN_PROD', blank=True, null=True)  # Field name made lowercase.
     saldo_prod = models.BigIntegerField(db_column='SALDO_PROD', blank=True, null=True)  # Field name made lowercase.
     teorico_prod = models.BigIntegerField(db_column='TEORICO_PROD', blank=True, null=True)  # Field name made lowercase.
@@ -131,11 +129,24 @@ class Produtos(models.Model):
                                   related_name='categorias')  # Field name made lowercase.
 
     def __str__(self):
-        return self.desc_prod
+        return self.name
 
     class Meta:
         managed = False
         db_table = 'PRODUTOS'
+        verbose_name = 'Produto'
+        verbose_name_plural = 'Produtos'
+
+
+class ProdutoPytech(models.Model):
+    desc = models.CharField('DESC', max_length=100)
+    sn = models.CharField('SN', max_length=18)
+
+    def __str__(self):
+        return '{} | {}'.format(self.desc, self.sn)
+
+    class Meta:
+        ordering = ['-id']
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
 
@@ -156,13 +167,13 @@ class ClientePytech(models.Model):
     OUTROS = 7
 
     TIPO_CLIENTE = (
-        HOSPITAL, 'Hospital',
-        CLINICA, 'Clinica Medica',
-        GRAFICA, 'Graficas',
-        IGREJA, 'Igrejas',
-        INDUSTRIA, 'Industrias',
-        SEGURANÇA, 'Epresas de Seguranças',
-        OUTROS, 'Outros ',
+        (HOSPITAL, 'Hospital'),
+        (CLINICA, 'Clinica Medica'),
+        (GRAFICA, 'Graficas'),
+        (IGREJA, 'Igrejas'),
+        (INDUSTRIA, 'Industrias'),
+        (SEGURANÇA, 'Epresas de Seguranças'),
+        (OUTROS, 'Outros'),
     )
 
     id_reff = models.PositiveIntegerField('ID Sistech')
@@ -181,11 +192,3 @@ class ClientePytech(models.Model):
 
     def __str__(self):
         return '{} ({})'.format(self.name, self.nick_name)
-
-
-class EnderePytech(models.Model):
-    pass
-
-
-class ContatoPytech(models.Model):
-    pass

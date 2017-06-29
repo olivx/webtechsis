@@ -1,113 +1,136 @@
 {% load utils_extras  %}
 
- <!-- Fixed navbar -->
- <div class="row">
+<!-- Fixed navbar -->
+<div class="row">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                  aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand "  href="{% url 'public' %}">Web Tech Sistem</a>
-        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand "  href="{% url 'public' %}">Web Tech System</a>
+            </div>
 
 
-        <div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar" class="navbar-collapse collapse">
 
 
-            {% if request.user.is_authenticated  %}
-          <ul class="nav navbar-nav">
+                {% if request.user.is_authenticated  %}
+                <ul class="nav navbar-nav">
 
-            <!-- Faturamento   -->
+                    <!-- Faturamento   -->
 
-              {% if user|has_group:"FATURAMENTO" %}
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                 aria-expanded="false">FATURAMENTO<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="{% url 'boletos:boletos_list' %}">Boletos</a></li>
-                <li><a href="#">Update Nfe</a></li>
+                    {% if user|has_group:"FATURAMENTO" %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">FATURAMENTO<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'boletos:boletos_list' %}">Boletos</a></li>
+                            <!--<li><a href="#">Update Nfe</a></li>-->
 
-                  <!--
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li> -->
-              </ul>
+                            <!--
+                              <li><a href="#">Something else here</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li class="dropdown-header">Nav header</li>
+                              <li><a href="#">Separated link</a></li>
+                              <li><a href="#">One more separated link</a></li> -->
+                        </ul>
 
-               {% endif  %}
+                        {% endif  %}
 
-               {% if user|has_group:"SISTEMAS" %}
-              </li><!-- Suporte    -->
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                 aria-expanded="false">SUPORTE <span class="caret"></span></a>
-              <ul class="dropdown-menu">
 
-                  <li><a href="{% url 'suporte:licenses' %}">Licensa Perennity </a></li>
 
-                  <!--
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-                -->
-              </ul>
+
+                        {% if user|has_group:"SISTEMAS" %}
+                    </li><!-- Suporte    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">SUPORTE <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="{% url 'suporte:licenses' %}">Licensa Perennity </a></li>
+                            <!--<li><a href="#">Cliente com Contratos </a></li>-->
+
+                            <!--
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li class="dropdown-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                          -->
+                        </ul>
+                        {% endif %}
+
+                    </li>
+
+
+
+                     {% if user|has_group:"FATURAMENTO" %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false"> CADASTRO <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'techcd:product_list' %}">Produtos </a></li>
+
+
+                            <!--
+                              <li><a href="#">Something else here</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li class="dropdown-header">Nav header</li>
+                              <li><a href="#">Separated link</a></li>
+                              <li><a href="#">One more separated link</a></li> -->
+                        </ul>
+
+                        {% endif  %}
+
+
+
+                </ul>
                 {% endif %}
 
-              </li>
 
+                <ul class="nav navbar-nav navbar-right">
 
-
-          </ul>
-            {% endif %}
-
-
-            <ul class="nav navbar-nav navbar-right">
-
-                  <li class="{% if request.resolver_match.url_name == 'contato'  %} active {% endif %}">
-                      <a href="{% url 'contato' %}">CONTATO</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'contato'  %} active {% endif %}">
+                        <a href="{% url 'contato' %}">CONTATO</a></li>
 
 
                     {% if request.user.is_authenticated  %}
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <!-- The Profile picture inserted via div class below, with shaping provided by Bootstrap -->
-                        <div class="img-rounded profile-img"></div>
-                        {{ request.user|upper }}
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Settings</a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <!-- The Profile picture inserted via div class below, with shaping provided by Bootstrap -->
+                            <div class="img-rounded profile-img"></div>
+                            {{ request.user|upper }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Settings</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
 
 
 
-                <li><a href="{% url 'logout' %}">Sair</a></li>
+                    <li><a href="{% url 'logout' %}">Sair</a></li>
                     {% else %}
 
-                  <li class="{% if request.resolver_match.url_name ==  'login' %}active {% endif %}">
-                      <a href="{% url 'login' %}">LOGIN</a></li>
+                    <li class="{% if request.resolver_match.url_name ==  'login' %}active {% endif %}">
+                        <a href="{% url 'login' %}">LOGIN</a></li>
 
                     {% endif %}
 
 
-            </ul>
+                </ul>
 
 
-        </div><!--/.nav-collapse -->
+            </div><!--/.nav-collapse -->
 
-      </div>
+        </div>
     </nav>
- </div>
+</div>

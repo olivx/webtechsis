@@ -29,6 +29,57 @@ $.ajaxSetup({
     }
 });
 
+    var loadFormProduto =  function(){
+
+        var btn = $(this)
+
+        $.ajax({
+            url: btn.attr('data-url'),
+            type: 'GET',
+
+            beforeSend: function(){
+                $('#modal-produtos').modal('show');
+            },
+            success: function(data){
+                $('#modal-produtos .modal-content').html(data.html_form)
+
+                $('.autocomplete').autocomplete({
+                    appendTo: 'modal-produtos',
+                    minLength: 3,
+                    source: '/core/produto/autocomplete/'
+                });
+
+
+            }
+        });
+
+    }
+
+    var saveProdutoForm =  function(){
+        var form = $(this);
+
+        $.ajax({
+            url:    form.attr('action'),
+            type:   form.attr('method'),
+            data:   form.serialize(),
+            dataType: 'json',
+
+            success: function(data){
+                if( data.is_form_valid){
+                    alert('funfo')
+
+                    $('#produto-table tbody').html(data.html_table);
+                    $('#modal-produtos').modal('hide');
+
+                }else{
+                    alert('num funfo')
+                }
+
+            }
+
+        });
+        return false;
+    };
 
     var loadFormLicense =  function (){
         var btn = $(this)
@@ -119,6 +170,12 @@ $.ajaxSetup({
 
     });
 
+    //  Create produtos
+    $('.js-modal-prodtudos').click(loadFormProduto);
+    $('#modal-produtos').on('submit', '.js-from-produto-save', saveProdutoForm);
+
+
+// page license
     // Create license
     $('.js-modal-form').click(loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-save', saveFormLicense);

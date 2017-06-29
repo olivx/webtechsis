@@ -60,8 +60,8 @@ class ProdutosAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_filter = (CategoriaFilter,)
     list_select_related = ('categoria',)
-    list_display = ('cod_prod', '__str__', 'categoria', 'saldo_prod', 'teorico_prod')
-    search_fields = ('desc_prod', 'categoria__desc_cat',)
+    list_display = ('id', '__str__', 'categoria', 'saldo_prod', 'teorico_prod')
+    search_fields = ('name', 'categoria__desc_cat',)
 
     @staticmethod
     def categoria(object):

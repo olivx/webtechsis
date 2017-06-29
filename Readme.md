@@ -14,6 +14,9 @@ cd webtechsis
 python -m venv .webtechsis
 source .webtechsis/bin/activete
 pip install -r requirements.txt
+git clone git@github.com:olivx/django-pure-pagination.git
+python django-pure-pagination/setup.py install
+rm -rf django-pure-pagination
 cp contrib/env-simple .env
 ```
 
