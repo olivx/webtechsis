@@ -90,7 +90,7 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.SUCCESS: 'alert-success',
 }
-
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/index/'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
