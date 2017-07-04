@@ -1,0 +1,10 @@
+[run]
+source = webtechsis, core,
+
+omit =
+    core/lagacy_model.py
+    core/admin.py
+    core/tests/*.py
+    core/migrations/*.py
+    core/admin.py
+    core/apps.py

@@ -1,27 +1,27 @@
-from django.contrib.auth import authenticate
 from django.db.models import Q
-from django.contrib.auth.models import User , Group
+from django.contrib.auth.models import User, Group
 from core.models import TechUser, GrupoUsuarios
 
 
-class TechCDBackend(object):
+class TechCDBackend:
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def authenticate(self, username=None, password=None):
-
 
         # senha padrao para usuario
         default_password = 'tech2433'
 
         # verifica se o usuario existe.
-        tech_user = TechUser.objects.using('techcd').\
-            filter(Q(username=username),Q(password=password)).first()
+        tech_user = TechUser.objects.using('techcd'). \
+            filter(Q(username=username), Q(password=password)).first()
 
         # se o usuario não existir no banco legado  ele estará como None
         if tech_user:
             # se existe no auth_db , entao crie ele para mim...
             user = User.objects.filter(username=username).first()
-            if user :
+            if user:
                 return user
             else:
                 # quando não existir eu crio um usuario
@@ -37,8 +37,6 @@ class TechCDBackend(object):
                 return _user
         else:
             return None
-
-
 
     def get_user(self, user_id):
         try:

@@ -29,6 +29,8 @@ $.ajaxSetup({
     }
 });
 
+// product form
+
     var loadFormProduto =  function(){
 
         var btn = $(this)
@@ -66,13 +68,15 @@ $.ajaxSetup({
 
             success: function(data){
                 if( data.is_form_valid){
-                    alert('funfo')
-
                     $('#produto-table tbody').html(data.html_table);
                     $('#modal-produtos').modal('hide');
 
+                    alert(data.message)
+
                 }else{
-                    alert('num funfo')
+                    alert(data.message)
+                    $('#modal-produtos .modal-content').html(data.html_form)
+
                 }
 
             }
@@ -81,6 +85,21 @@ $.ajaxSetup({
         return false;
     };
 
+
+//  Create produtos
+    $('.js-modal-prodtudos').click(loadFormProduto);
+    $('#modal-produtos').on('submit', '.js-form-produto-save', saveProdutoForm);
+
+// Update produtos
+    $('#produto-table').on('click', '.js-produto-update', loadFormProduto);
+    $('#modal-produtos').on('submit', '.js-form-produto-update', saveProdutoForm);
+
+// deactivate produto
+    $('#produto-table').on('click', '.js-produto-deactivate', loadFormProduto);
+    $('#modal-produtos').on('submit' , '.js-form-produto-deactivate', saveProdutoForm);
+
+
+// License form
     var loadFormLicense =  function (){
         var btn = $(this)
 
@@ -141,8 +160,11 @@ $.ajaxSetup({
     };
 
 
+
+// suporte add
+
     // parar de mandar avisos
-   $('#modal-license').on('click', '.js-send-warning', function (){
+    $('#modal-license').on('click', '.js-send-warning', function (){
 
         var form = $('.js-form-license-update');
 
@@ -170,27 +192,21 @@ $.ajaxSetup({
 
     });
 
-    //  Create produtos
-    $('.js-modal-prodtudos').click(loadFormProduto);
-    $('#modal-produtos').on('submit', '.js-from-produto-save', saveProdutoForm);
-
-
-// page license
-    // Create license
+// Create license
     $('.js-modal-form').click(loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-save', saveFormLicense);
 
-    // Update License
+// Update License
     $('#license_table').on('click' , '.js-license-update' , loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-update', saveFormLicense);
 
-    // Delete License
+// Delete License
     $('#license_table').on('click' , '.js-license-delete' , loadFormLicense);
     $('#modal-license').on('submit', '.js-form-license-delete', saveFormLicense);
 
 
 
-// page boletos
+// faturamento app
     //remendo os disabled dos campos para o subimit
     $('.js-form-update-boleto').submit(function(){
         $(".js-form-update-boleto :disabled").removeAttr('disabled');

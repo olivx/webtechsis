@@ -12,3 +12,6 @@ start.sh
 supervisor.conf
 staticfiles/
 htmlcov/
+.coverage
+
+

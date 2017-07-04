@@ -108,9 +108,13 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+
+                            {% if request.user.is_superuser %}
                             <li>
-                                <a href="#">Settings</a>
+                                <a href="{% url 'admin:index' %}">Admin</a>
                             </li>
+                            {% endif %}
+
                             <li role="separator" class="divider"></li>
                         </ul>
                     </li>

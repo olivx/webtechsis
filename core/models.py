@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.conf import settings
 
 
 class TechUser(models.Model):
@@ -19,8 +20,8 @@ class TechUser(models.Model):
         return self.username
 
     class Meta:
-        managed = False
-        db_table = 'TECHCD].[DBO].[USUARIOS'
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'USUARIOS'
 
 
 class GrupoUsuarios(models.Model):
@@ -28,11 +29,11 @@ class GrupoUsuarios(models.Model):
     desc_grupo = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
-        managed = False
-        db_table = 'TECHCD].[DBO].[GRUPO_USUARIOS'
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'GRUPO_USUARIOS'
 
     def __str__(self):
-        return self.desc_grupo
+        return self.desc_grupo.upper()
 
 
 class Contact(models.Model):
@@ -69,11 +70,12 @@ class Clientes(models.Model):
     name = models.CharField(db_column='NOME_CLI', max_length=80, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
-        db_table = 'TECHCD].[DBO].[CLIENTES'
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'CLIENTES'
 
     def __str__(self):
-        return self.name
+        name = [n.capitalize() for n in self.name.split()]
+        return ' '.join(name)
 
 
 class Categorias(models.Model):
@@ -87,10 +89,10 @@ class Categorias(models.Model):
                                    null=True)  # Field name made lowercase.
 
     def __str__(self):
-        return self.desc_cat
+        return self.desc_cat.upper()
 
     class Meta:
-        managed = False
+        managed = True if settings.RUNNING_UNIT_TESTS else False
         db_table = 'CATEGORIAS'
         verbose_name = 'Categoria'
         verbose_name_plural = 'Categorias'
@@ -129,17 +131,22 @@ class Produtos(models.Model):
                                   related_name='categorias')  # Field name made lowercase.
 
     def __str__(self):
-        return self.name
+        return self.name.upper()
 
     class Meta:
-        managed = False
+        managed = True if settings.RUNNING_UNIT_TESTS else False
         db_table = 'PRODUTOS'
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
 
 
+# cadastros para pytech
+
+
 class ProdutoPytech(models.Model):
+    cliente =  models.ForeignKey('ClientePytech', null=True, blank=True, related_name='produtos')
     desc = models.CharField('DESC', max_length=100)
+    ativo = models.NullBooleanField(default=True)
     sn = models.CharField('SN', max_length=18)
 
     def __str__(self):
@@ -147,11 +154,9 @@ class ProdutoPytech(models.Model):
 
     class Meta:
         ordering = ['-id']
-        verbose_name = 'Produto'
-        verbose_name_plural = 'Produtos'
+        verbose_name = 'Pytech Produto '
+        verbose_name_plural = 'Pytech Produtos'
 
-
-# cadastros para pytech
 
 class GrupoClientePytech(models.Model):
     name = models.CharField('Nome do Grupo', max_length=100)

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
+import sys
 from decouple import config, Csv
 from django.contrib import messages
 from django.shortcuts import resolve_url as r
@@ -122,6 +122,13 @@ DATABASES = {
         }
     }
 }
+
+RUNNING_UNIT_TESTS = 'test' in sys.argv
+if RUNNING_UNIT_TESTS:
+    print('RUN TESTS')
+    DATABASES['techcd'] = {
+        'ENGINE' : 'django.db.backends.sqlite3',
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

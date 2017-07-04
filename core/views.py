@@ -4,12 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpResponse, JsonResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, resolve_url
+from django.shortcuts import render, resolve_url, get_object_or_404
 from django.template.loader import render_to_string
-
+from django.db.models import Q
 from core.form import ContactForm, ProdutoForm
 from core.models import Clientes, Produtos, ProdutoPytech
-
 
 # Create your views here.
 from core.utils import pagination
@@ -19,6 +18,7 @@ from core.utils import pagination
 def home(request):
     '''Render my home page'''
     return render(request, 'index.html')
+
 
 def contact(request):
     template = 'contato.html'
@@ -36,6 +36,7 @@ def contact(request):
             return HttpResponseRedirect(resolve_url('obrigado_pelo_contato'))
 
     return render(request, template, {'form': form})
+
 
 def autocomplete(object_list):
     """ Generic autocomplete """
@@ -77,33 +78,80 @@ def autocomplete_produtos(request):
 
 @login_required
 def produtos(request):
-    produtos = ProdutoPytech.objects.all()
-    produto_paginator = pagination(request, produtos, 7)
+    _search = request.GET.get('search')
+    print(_search)
+
+    if _search is not None:
+        product_list = ProdutoPytech.objects.filter(Q(sn=_search) | Q(desc__contains=_search) & Q(ativo=True))
+    else:
+        product_list = ProdutoPytech.objects.filter(ativo=True)
+    produto_paginator = pagination(request, product_list, 7)
     context = {
         'produto': produto_paginator
     }
     return render(request, 'produtos.html', context)
 
 
-def produtos_save(request):
+def produto_form_services(request, form, template_name, message):
     data = {}
-    template_name = 'produtos/produto_modal_create.html'
-    form = ProdutoForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            produtos = ProdutoPytech.objects.all()
-
+            produtos = ProdutoPytech.objects.filter(ativo=True)
             produto_paginator = pagination(request, produtos)
             data['is_form_valid'] = True
+            data['message'] = message
             data['html_table'] = render_to_string('produtos/produto_table.html',
                                                   {'produto': produto_paginator}, request=request)
         else:
             data['is_form_valid'] = False
+            data['message'] = 'erros foram encontrados durante o processo, verifique tente novamente.'
             data['html_form'] = \
                 render_to_string(template_name, context={'form': form}, request=request)
 
     else:
         data['html_form'] = render_to_string(template_name, context={'form': form}, request=request)
+
+    return JsonResponse(data)
+
+
+def produto_save(request):
+    form = ProdutoForm(request.POST or None)
+    return produto_form_services(request, form, 'produtos/produto_modal_create.html',
+                                 'Produto incluido com sucesso.')
+
+
+def produto_update(request, pk):
+    product = get_object_or_404(ProdutoPytech, pk=pk)
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=product)
+    else:
+        form = ProdutoForm(instance=product)
+
+    return produto_form_services(request, form, 'produtos/produto_update_form.html',
+                                 'Produto Alterado com sucesso! ')
+
+
+def produto_delete(request, pk):
+    data = {}
+    template_name = 'produtos/produto_delete_form.html'
+    product = get_object_or_404(ProdutoPytech, pk=pk)
+    if request.method == 'POST':
+        product.ativo = False
+        product.save()
+        produtos = ProdutoPytech.objects.filter(ativo=True)
+        produto_paginator = pagination(request, produtos)
+
+        data['is_form_valid'] = True
+        data['message'] = 'Produto: {} \ndesativado com Sucesso.'\
+                'esse produto pode ser acessado somente na area de administração. '\
+            .format(product.desc)
+
+        data['html_table'] = render_to_string('produtos/produto_table.html',
+                                              {'produto': produto_paginator}, request=request)
+    else:
+        form = ProdutoForm(instance=product)
+        data['html_form'] = \
+            render_to_string(template_name, context={'form': form}, request=request)
 
     return JsonResponse(data)

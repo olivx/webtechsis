@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import SimpleListFilter
-from core.models import Contact, Produtos, Categorias
+from core.models import Contact, Produtos, Categorias, ProdutoPytech
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -50,12 +50,14 @@ class ProdutosAdmin(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         # Tell Django to populate ForeignKey widgets using a query
         # on the 'other' database.
-        return super(ProdutosAdmin, self).formfield_for_foreignkey(db_field, request, using='techcd', **kwargs)
+        return super(ProdutosAdmin, self).\
+            formfield_for_foreignkey(db_field, request, using='techcd', **kwargs)
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         # Tell Django to populate ManyToMany widgets using a query
         # on the 'other' database.
-        return super(ProdutosAdmin, self).formfield_for_manytomany(db_field, request, using='techcd', **kwargs)
+        return super(ProdutosAdmin, self)\
+            .formfield_for_manytomany(db_field, request, using='techcd', **kwargs)
 
     list_per_page = 10
     list_filter = (CategoriaFilter,)
@@ -67,3 +69,11 @@ class ProdutosAdmin(admin.ModelAdmin):
     def categoria(object):
         categorias = object.categoria
         return categorias
+
+
+@admin.register(ProdutoPytech)
+class PytechProdutos(admin.ModelAdmin):
+    list_filter = ('ativo', )
+    list_display = ('desc','sn', 'ativo')
+    search_fields = ('desc', 'sn')
+    list_per_page = 10
