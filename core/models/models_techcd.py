@@ -1,6 +1,5 @@
-from django.contrib.auth.models import User
-from django.db import models
 from django.conf import settings
+from core.manage import *
 
 
 class TechUser(models.Model):
@@ -16,6 +15,8 @@ class TechUser(models.Model):
     skype = models.CharField(db_column='APELIDO_SKYPE', max_length=40, blank=True,
                              null=True)  # Field name made lowercase.
 
+    objects = TechUserManager()
+
     def __str__(self):
         return self.username
 
@@ -28,6 +29,8 @@ class GrupoUsuarios(models.Model):
     cod_grupo = models.BigIntegerField(primary_key=True)
     desc_grupo = models.CharField(max_length=20, blank=True, null=True)
 
+    objects = GrupoUsuarioManager()
+
     class Meta:
         managed = True if settings.RUNNING_UNIT_TESTS else False
         db_table = 'GRUPO_USUARIOS'
@@ -36,38 +39,11 @@ class GrupoUsuarios(models.Model):
         return self.desc_grupo.upper()
 
 
-class Contact(models.Model):
-    SUGESTAO = 1
-    SOLITACAO = 2
-    RECALAMCAO = 3
-    RECALAMCAO_ANONIMA = 4
-
-    TIPO_CATEGORIAS = (
-        (SUGESTAO, 'SUGESTÃO'),
-        (SOLITACAO, 'SOLITAÇÃO'),
-        (RECALAMCAO, 'RECLAMAÇÃO'),
-        (RECALAMCAO_ANONIMA, 'RECLAMAÇÃO ANONIMA'),
-    )
-
-    nome = models.CharField(max_length=50, null=True, blank=True)
-    categoria = models.IntegerField(choices=TIPO_CATEGORIAS, default=SUGESTAO)
-    assunto = models.CharField(max_length=100, )
-    menssagem = models.TextField()
-    data_created = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, default=0, null=True, blank=True)
-
-    class Meta:
-        ordering = ['-data_created']
-        verbose_name = 'Contato'
-        verbose_name_plural = 'Contatos'
-
-    def __str__(self):
-        return self.assunto
-
-
 class Clientes(models.Model):
-    id = models.BigIntegerField(db_column='COD_CLI', primary_key=True)  # Field name made lowercase.
+    cod_cli = models.BigIntegerField(db_column='COD_CLI', primary_key=True)  # Field name made lowercase.
     name = models.CharField(db_column='NOME_CLI', max_length=80, blank=True, null=True)  # Field name made lowercase.
+
+    objects = ClienteManager()
 
     class Meta:
         managed = True if settings.RUNNING_UNIT_TESTS else False
@@ -88,6 +64,8 @@ class Categorias(models.Model):
     apelido_cat = models.CharField(db_column='APELIDO_CAT', max_length=50, blank=True,
                                    null=True)  # Field name made lowercase.
 
+    objects = CategoriaProdutoTechManager()
+
     def __str__(self):
         return self.desc_cat.upper()
 
@@ -99,7 +77,7 @@ class Categorias(models.Model):
 
 
 class Produtos(models.Model):
-    '''
+    """  categorias
      categorias relacionada ao suporte 
      174 =  Gravadore 
      42 =  equipamentos 
@@ -113,10 +91,10 @@ class Produtos(models.Model):
      57 = licença
      69 =  monitores 
      71 =  prdutos stratasys 
-    '''
+    """
     list_cod_cat = [174, 42, 45, 46, 49, 52, 62, 63, 64, 68, 69, 71]
 
-    id = models.BigIntegerField(db_column='COD_PROD', primary_key=True)  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD', primary_key=True)  # Field name made lowercase.
     name = models.CharField(db_column='DESC_PROD', max_length=300, blank=True,
                             null=True)  # Field name made lowercase.
     min_prod = models.IntegerField(db_column='MIN_PROD', blank=True, null=True)  # Field name made lowercase.
@@ -130,6 +108,8 @@ class Produtos(models.Model):
     categoria = models.ForeignKey(Categorias, db_column='COD_CAT', blank=True, null=True,
                                   related_name='categorias')  # Field name made lowercase.
 
+    objects = ProdutoTechManager()
+
     def __str__(self):
         return self.name.upper()
 
@@ -140,60 +120,62 @@ class Produtos(models.Model):
         verbose_name_plural = 'Produtos'
 
 
-# cadastros para pytech
+# contrato
 
-
-class ProdutoPytech(models.Model):
-    cliente =  models.ForeignKey('ClientePytech', null=True, blank=True, related_name='produtos')
-    desc = models.CharField('DESC', max_length=100)
-    ativo = models.NullBooleanField(default=True)
-    sn = models.CharField('SN', max_length=18)
-
-    def __str__(self):
-        return '{} | {}'.format(self.desc, self.sn)
-
-    class Meta:
-        ordering = ['-id']
-        verbose_name = 'Pytech Produto '
-        verbose_name_plural = 'Pytech Produtos'
-
-
-class GrupoClientePytech(models.Model):
-    name = models.CharField('Nome do Grupo', max_length=100)
-
-
-class ClientePytech(models.Model):
-    HOSPITAL = 1
-    CLINICA = 2
-    GRAFICA = 3
-    IGREJA = 4
-    INDUSTRIA = 5
-    SEGURANÇA = 6
-    OUTROS = 7
-
-    TIPO_CLIENTE = (
-        (HOSPITAL, 'Hospital'),
-        (CLINICA, 'Clinica Medica'),
-        (GRAFICA, 'Graficas'),
-        (IGREJA, 'Igrejas'),
-        (INDUSTRIA, 'Industrias'),
-        (SEGURANÇA, 'Epresas de Seguranças'),
-        (OUTROS, 'Outros'),
-    )
-
-    id_reff = models.PositiveIntegerField('ID Sistech')
-    name = models.CharField('Razão Social', max_length=255)
-    nick_name = models.CharField('Apelido', max_length=200, null=True, blank=True)
-    comments = models.TextField(null=True, blank=True)
-    active = models.NullBooleanField(default=False)
-    tipo = models.PositiveIntegerField('Ramo', default=HOSPITAL, choices=TIPO_CLIENTE)
-    created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
-    class Meta:
-        verbose_name = 'Cliente'
-        verbose_name_plural = 'Clientes'
-        ordering = ['-created']
+class Contrato(models.Model):
+    cod_contrato = models.BigAutoField(db_column='COD_CONTRATO', primary_key=True)  # Field name made lowercase.
+    cod_tip_cont = models.ForeignKey('TipoContrato', db_column='COD_TIP_CONT',
+                                     related_name='tipos')  # Field name made lowercase.
+    num_contrato = models.CharField(db_column='NUM_CONTRATO', max_length=11)  # Field name made lowercase.
+    empresa = models.CharField(db_column='EMPRESA', max_length=1)  # Field name made lowercase.
+    data_criacao = models.DateTimeField(db_column='DATA_CRIACAO')  # Field name made lowercase.
+    ind_ativo = models.NullBooleanField(db_column='IND_ATIVO')
 
     def __str__(self):
-        return '{} ({})'.format(self.name, self.nick_name)
+        return self.num_contrato
+
+    class Meta:
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'CONTRATO'
+
+
+class TipoContrato(models.Model):
+    cod_tip_cont = models.BigAutoField(db_column='COD_TIP_CONT', primary_key=True)  # Field name made lowercase.
+    nome_tip_cont = models.CharField(db_column='NOME_TIP_CONT', max_length=30)  # Field name made lowercase.
+    desc_tipo_cont = models.CharField(db_column='DESC_TIPO_CONT', max_length=200)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.nome_tip_cont
+
+    class Meta:
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'TIPO_CONTRATO'
+
+
+class ContratoCliente(models.Model):
+    cod_contrato = models.ForeignKey(Contrato, db_column='COD_CONTRATO')  # Field name made lowercase.
+    cod_cli = models.ForeignKey('Clientes', db_column='COD_CLI', related_name='clientes')  # Field name made lowercase.
+    unidade_negocio = models.ForeignKey('UnidadeNegocio', db_column='COD_UNID_NEG',
+                                        related_name='unidade_negicos')  # Field name made lowercase.
+
+    def __str__(self):
+        return str(self.cod_cli)
+
+    class Meta:
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'CONTRATO_CLIENTE'
+        unique_together = ('cod_contrato', 'cod_cli')
+
+
+class UnidadeNegocio(models.Model):
+    cod_unid_neg = models.BigAutoField(db_column='COD_UNID_NEG', primary_key=True)  # Field name made lowercase.
+    nivel = models.CharField(db_column='NIVEL', max_length=10)  # Field name made lowercase.
+    nome_unid_neg = models.CharField(db_column='NOME_UNID_NEG', max_length=30)  # Field name made lowercase.
+    desc_unid_nego = models.CharField(db_column='DESC_UNID_NEGO', max_length=200)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.nome_unid_neg
+
+    class Meta:
+        managed = True if settings.RUNNING_UNIT_TESTS else False
+        db_table = 'UNIDADE_NEGOCIO'

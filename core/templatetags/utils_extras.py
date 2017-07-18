@@ -1,6 +1,5 @@
 from django import template
 from datetime import date
-from django.contrib.auth.models import Group , User
 
 register = template.Library()
 
@@ -40,3 +39,16 @@ def valid_success(valide_date):
         return True
     else:
         return False
+
+
+@register.filter(name='name_empresa')
+def name_empresa(empresa):
+    if empresa ==  'D':
+        return 'DATA STORE'
+
+    if empresa == 'T':
+        return 'TECHCD'
+
+    if empresa == 'M':
+        return 'MIDIA CENTER'
+

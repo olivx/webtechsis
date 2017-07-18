@@ -1,0 +1,26 @@
+{% load utils_extras %}
+{% for contrato_cliente in contrato_cliente_list.object_list %}
+
+<tbody>
+<tr class="{% if contrato_cliente.cod_contrato.ind_ativo is not True%} bg-danger {% endif %}">
+    <th>{{ contrato_cliente.cod_cli.cod_cli }}</th>
+    <th>{{ contrato_cliente|upper }}</th>
+    <th>{{ contrato_cliente.cod_contrato}}</th>
+    <th>{{ contrato_cliente.unidade_negocio|upper}}</th>
+    <th>{{ contrato_cliente.cod_contrato.cod_tip_cont|upper}}</th>
+    <th>{{ contrato_cliente.cod_contrato.empresa|name_empresa }}</th>
+    <th class="text-center">
+        {% if contrato_cliente.cod_contrato.ind_ativo %}
+            <i class="glyphicon glyphicon-ok" style="color:green"></i>
+        {% else %}
+            <i class="glyphicon glyphicon-remove" style="color:red"></i>
+        {% endif %}
+    </th>
+</tr>
+</tbody>
+{% empty %}
+<tr>
+    <th colspan="7" class="bg-warning text-center"> Não foi encontrado nenhum resultado</th>
+</tr>
+
+{% endfor %}

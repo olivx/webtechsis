@@ -8,7 +8,7 @@ from django.shortcuts import render, resolve_url, get_object_or_404
 from django.template.loader import render_to_string
 from django.db.models import Q
 from core.form import ContactForm, ProdutoForm
-from core.models import Clientes, Produtos, ProdutoPytech
+from core.models import Clientes, Produtos, ProdutoPytech, ContratoCliente, Contrato, TipoContrato, UnidadeNegocio
 
 # Create your views here.
 from core.utils import pagination
@@ -43,7 +43,7 @@ def autocomplete(object_list):
     results = []
     for object in object_list:
         json_ = {}
-        json_['id'] = object.id
+        json_['id'] = object.cod_cli
         json_['label'] = object.name.upper()
         json_['value'] = object.name.upper()
         results.append(json_)
@@ -92,6 +92,7 @@ def produtos(request):
     return render(request, 'produtos.html', context)
 
 
+@login_required
 def produto_form_services(request, form, template_name, message):
     data = {}
     if request.method == 'POST':
@@ -115,12 +116,14 @@ def produto_form_services(request, form, template_name, message):
     return JsonResponse(data)
 
 
+@login_required
 def produto_save(request):
     form = ProdutoForm(request.POST or None)
     return produto_form_services(request, form, 'produtos/produto_modal_create.html',
                                  'Produto incluido com sucesso.')
 
 
+@login_required
 def produto_update(request, pk):
     product = get_object_or_404(ProdutoPytech, pk=pk)
     if request.method == 'POST':
@@ -132,6 +135,7 @@ def produto_update(request, pk):
                                  'Produto Alterado com sucesso! ')
 
 
+@login_required
 def produto_delete(request, pk):
     data = {}
     template_name = 'produtos/produto_delete_form.html'
@@ -143,8 +147,8 @@ def produto_delete(request, pk):
         produto_paginator = pagination(request, produtos)
 
         data['is_form_valid'] = True
-        data['message'] = 'Produto: {} \ndesativado com Sucesso.'\
-                'esse produto pode ser acessado somente na area de administração. '\
+        data['message'] = 'Produto: {} \ndesativado com Sucesso.' \
+                          'esse produto pode ser acessado somente na area de administração. ' \
             .format(product.desc)
 
         data['html_table'] = render_to_string('produtos/produto_table.html',
@@ -155,3 +159,23 @@ def produto_delete(request, pk):
             render_to_string(template_name, context={'form': form}, request=request)
 
     return JsonResponse(data)
+
+
+@login_required
+def contrato_client_list(request):
+
+
+    search = request.GET.get('search')
+    if search is not None:
+        contrato_cliente = ContratoCliente.objects.select_related().using('techcd').filter(
+            Q(cod_contrato__num_contrato=search) |
+            Q(cod_cli__name__contains=search)
+        )
+    else:
+        contrato_cliente = ContratoCliente.objects.select_related().using('techcd').all()
+
+    contrato_cliente_list = pagination(request, contrato_cliente, 10)
+    context = {
+        'contrato_cliente_list': contrato_cliente_list
+    }
+    return render(request, 'client_list.html', context)

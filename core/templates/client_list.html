@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <h1 class="page-header">Clientes</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <form action="{% url 'techcd:contato_cliente_list' %}" method="GET">
+                {% csrf_token %}
+                <div class="input-group">
+
+                    <input id="search" name="search" class="form-control" type="text"
+                           placeholder="Buscar por: Numero de Contrato ou Nome de Cliente"
+                           autofocus>
+
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+                </div> <!--  div input group -->
+            </form>
+        </div><!-- col 8 row  -->
+    </div><!--  row div search-bar -->
+
+    <div style="height:2em;"></div>
+    <div class="row">
+
+        <table id="table-client"class="table table-condensed table-hover">
+            <thead class="thead-inverse">
+            <tr>
+                <th colspan="7"></th>
+            </tr>
+
+            <tr class="bg-success">
+                <th>#</th>
+                <th>CLIENTE</th>
+                <th>CONTRATO</th>
+                <th>U. NEGOCIO</th>
+                <th>T. CONTRATO</th>
+                <th>EMPRESA</th>
+                <th>STATUS</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+            <tr>
+                {% include 'clientes/cliente_table.html' %}
+            </tr>
+            </tbody>
+
+        </table>
+            {% include 'pagination.html' with object=contrato_cliente_list %}
+
+    </div>
+
+
+
+
+</div>
+
+
+{% endblock %}

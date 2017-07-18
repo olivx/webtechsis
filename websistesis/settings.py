@@ -119,16 +119,18 @@ DATABASES = {
             'host_is_server': True,
             'unicode_results': True,
             'extra_params': 'TDS_VERSION=8.0',
+            },
         }
-    }
 }
 
 RUNNING_UNIT_TESTS = 'test' in sys.argv
 if RUNNING_UNIT_TESTS:
-    print('RUN TESTS')
+    print('RUN TESTS...')
     DATABASES['techcd'] = {
-        'ENGINE' : 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.teste'),
     }
+    print(DATABASES['techcd'])
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

@@ -14,8 +14,7 @@ class TechCDBackend:
         default_password = 'tech2433'
 
         # verifica se o usuario existe.
-        tech_user = TechUser.objects.using('techcd'). \
-            filter(Q(username=username), Q(password=password)).first()
+        tech_user = TechUser.objects.filter(Q(username=username), Q(password=password)).first()
 
         # se o usuario não existir no banco legado  ele estará como None
         if tech_user:
@@ -29,7 +28,7 @@ class TechCDBackend:
                 _user.set_password(default_password)
                 _user.is_active = True
                 _user.save()
-                group_user = GrupoUsuarios.objects.using('techcd').get(groups=tech_user)
+                group_user = GrupoUsuarios.objects.get(groups=tech_user)
                 group, created = Group.objects.get_or_create(name=group_user.desc_grupo.strip())
                 _user.groups.add(group)
                 _user.save()

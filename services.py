@@ -4,6 +4,7 @@ import os
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "websistesis.settings")
     import django
+
     django.setup()
 
     from datetime import date
@@ -25,13 +26,16 @@ if __name__ == "__main__":
         now = date.today()
         licenses = PerennityLicense.objects.filter(Q(active=True) & Q(nao_enviar_aviso=False))
 
-
         for license in licenses:
             time = license.valid - now
             if time.days in time_is_out:
-                message = render_to_string('snippet/license_warning.txt', {'license' : license})
-                subject =  'Licença do cliente: {0} expira em {1}'.format(license.cliente, license.valid.strftime('%d/%m/%Y'))
-                send_mail(subject, message, 'thiago@techcd.com.br', ['suporte@techcd.com.br'] )
+                message = render_to_string('snippet/license_warning.txt', {'license': license})
+                subject = 'Licença do cliente: {0} expira em {1}'.format(license.cliente,
+                                                                         license.valid.strftime('%d/%m/%Y'))
+                send_mail(subject, message, 'thiago@techcd.com.br', ['suporte@techcd.com.br'])
+
 
     if __name__ == '__main__':
+        check_license()
+
         check_license()

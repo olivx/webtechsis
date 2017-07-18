@@ -10,6 +10,19 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+
+
+class ArquivoRemessa(models.Model):
+    num_remessa = models.BigAutoField(db_column='NUM_REMESSA', primary_key=True)  # Field name made lowercase.
+    cod_banco = models.IntegerField(db_column='COD_BANCO')  # Field name made lowercase.
+    nome_arquivo = models.CharField(db_column='NOME_ARQUIVO', max_length=512)  # Field name made lowercase.
+    data_geracao = models.DateTimeField(db_column='DATA_GERACAO', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'ARQUIVO_REMESSA'
+
+
 class AssocFreteLocalidade(models.Model):
     cod_ent = models.ForeignKey('FreteRegiao', models.DO_NOTHING, db_column='COD_ENT')  # Field name made lowercase.
     sigla_regiao = models.ForeignKey('FreteRegiao', models.DO_NOTHING, db_column='SIGLA_REGIAO')  # Field name made lowercase.
@@ -225,6 +238,8358 @@ class BancoCliente(models.Model):
         db_table = 'BANCO_CLIENTE'
 
 
+class Boletonf17750(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17750'
+
+
+class Boletonf17861(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17861'
+
+
+class Boletonf17915(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17915'
+
+
+class Boletonf17925(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17925'
+
+
+class Boletonf17938(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17938'
+
+
+class Boletonf17976(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17976'
+
+
+class Boletonf17984(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17984'
+
+
+class Boletonf17985(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_17985'
+
+
+class Boletonf18233(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18233'
+
+
+class Boletonf18262(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18262'
+
+
+class Boletonf18265(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18265'
+
+
+class Boletonf18276(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18276'
+
+
+class Boletonf18277(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18277'
+
+
+class Boletonf18289(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18289'
+
+
+class Boletonf1829(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_1829'
+
+
+class Boletonf18325(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18325'
+
+
+class Boletonf18530(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18530'
+
+
+class Boletonf18574(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18574'
+
+
+class Boletonf1858(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_1858'
+
+
+class Boletonf18716(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18716'
+
+
+class Boletonf1873(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_1873'
+
+
+class Boletonf18742(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18742'
+
+
+class Boletonf18874(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18874'
+
+
+class Boletonf18984(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_18984'
+
+
+class Boletonf19022(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19022'
+
+
+class Boletonf19048(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19048'
+
+
+class Boletonf19065(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19065'
+
+
+class Boletonf19097(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19097'
+
+
+class Boletonf19128(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19128'
+
+
+class Boletonf1913(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_1913'
+
+
+class Boletonf19222(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19222'
+
+
+class Boletonf19226(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19226'
+
+
+class Boletonf19337(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19337'
+
+
+class Boletonf1940(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_1940'
+
+
+class Boletonf19439(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19439'
+
+
+class Boletonf19479(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19479'
+
+
+class Boletonf19495(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19495'
+
+
+class Boletonf19505(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19505'
+
+
+class Boletonf19506(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19506'
+
+
+class Boletonf19651(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19651'
+
+
+class Boletonf19673(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19673'
+
+
+class Boletonf19710(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19710'
+
+
+class Boletonf19893(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_19893'
+
+
+class Boletonf20094(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20094'
+
+
+class Boletonf20105(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20105'
+
+
+class Boletonf20262(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20262'
+
+
+class Boletonf20285(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20285'
+
+
+class Boletonf20311(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20311'
+
+
+class Boletonf20321(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20321'
+
+
+class Boletonf20322(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20322'
+
+
+class Boletonf20326(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20326'
+
+
+class Boletonf20345(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20345'
+
+
+class Boletonf20442(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20442'
+
+
+class Boletonf20450(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20450'
+
+
+class Boletonf20457(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20457'
+
+
+class Boletonf20526(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20526'
+
+
+class Boletonf20601(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20601'
+
+
+class Boletonf20686(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20686'
+
+
+class Boletonf20826(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20826'
+
+
+class Boletonf20839(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20839'
+
+
+class Boletonf2090(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2090'
+
+
+class Boletonf20929(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_20929'
+
+
+class Boletonf2094(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2094'
+
+
+class Boletonf2095(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2095'
+
+
+class Boletonf21005(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21005'
+
+
+class Boletonf21013(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21013'
+
+
+class Boletonf21049(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21049'
+
+
+class Boletonf21072(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21072'
+
+
+class Boletonf2112(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2112'
+
+
+class Boletonf2114(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2114'
+
+
+class Boletonf21185(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21185'
+
+
+class Boletonf2119(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2119'
+
+
+class Boletonf21215(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21215'
+
+
+class Boletonf21286(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21286'
+
+
+class Boletonf21316(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21316'
+
+
+class Boletonf21361(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21361'
+
+
+class Boletonf21367(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21367'
+
+
+class Boletonf21385(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21385'
+
+
+class Boletonf21387(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21387'
+
+
+class Boletonf21398(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21398'
+
+
+class Boletonf21406(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21406'
+
+
+class Boletonf21416(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21416'
+
+
+class Boletonf21424(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21424'
+
+
+class Boletonf2150(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2150'
+
+
+class Boletonf2155(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2155'
+
+
+class Boletonf21602(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21602'
+
+
+class Boletonf21641(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21641'
+
+
+class Boletonf21672(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21672'
+
+
+class Boletonf2168(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2168'
+
+
+class Boletonf2169(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2169'
+
+
+class Boletonf21735(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21735'
+
+
+class Boletonf21737(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21737'
+
+
+class Boletonf21802(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21802'
+
+
+class Boletonf21824(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_21824'
+
+
+class Boletonf2183(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2183'
+
+
+class Boletonf22059(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22059'
+
+
+class Boletonf2209(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2209'
+
+
+class Boletonf22128(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22128'
+
+
+class Boletonf22219(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22219'
+
+
+class Boletonf22220(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22220'
+
+
+class Boletonf22232(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22232'
+
+
+class Boletonf22313(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22313'
+
+
+class Boletonf22314(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22314'
+
+
+class Boletonf22315(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22315'
+
+
+class Boletonf22316(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22316'
+
+
+class Boletonf22330(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22330'
+
+
+class Boletonf2263(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2263'
+
+
+class Boletonf22637(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22637'
+
+
+class Boletonf22867(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22867'
+
+
+class Boletonf22881(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22881'
+
+
+class Boletonf22907(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22907'
+
+
+class Boletonf22972(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22972'
+
+
+class Boletonf22973(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_22973'
+
+
+class Boletonf23029(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23029'
+
+
+class Boletonf23096(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23096'
+
+
+class Boletonf23100(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23100'
+
+
+class Boletonf23298(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23298'
+
+
+class Boletonf23323(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23323'
+
+
+class Boletonf2335(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2335'
+
+
+class Boletonf2346(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2346'
+
+
+class Boletonf2347(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2347'
+
+
+class Boletonf2355(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2355'
+
+
+class Boletonf23610(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23610'
+
+
+class Boletonf23617(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23617'
+
+
+class Boletonf23688(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23688'
+
+
+class Boletonf2375(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2375'
+
+
+class Boletonf23795(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23795'
+
+
+class Boletonf23985(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_23985'
+
+
+class Boletonf24015(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24015'
+
+
+class Boletonf24056(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24056'
+
+
+class Boletonf24074(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24074'
+
+
+class Boletonf24108(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24108'
+
+
+class Boletonf24120(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24120'
+
+
+class Boletonf24167(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24167'
+
+
+class Boletonf24184(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24184'
+
+
+class Boletonf24206(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24206'
+
+
+class Boletonf2430(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2430'
+
+
+class Boletonf24342(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24342'
+
+
+class Boletonf24417(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24417'
+
+
+class Boletonf2445(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2445'
+
+
+class Boletonf24501(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24501'
+
+
+class Boletonf24506(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24506'
+
+
+class Boletonf24511(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24511'
+
+
+class Boletonf24518(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24518'
+
+
+class Boletonf24549(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24549'
+
+
+class Boletonf24558(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24558'
+
+
+class Boletonf24730(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24730'
+
+
+class Boletonf24767(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24767'
+
+
+class Boletonf24803(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24803'
+
+
+class Boletonf24810(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24810'
+
+
+class Boletonf2482(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2482'
+
+
+class Boletonf2484(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2484'
+
+
+class Boletonf24861(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24861'
+
+
+class Boletonf24867(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24867'
+
+
+class Boletonf24894(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24894'
+
+
+class Boletonf24923(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24923'
+
+
+class Boletonf24965(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_24965'
+
+
+class Boletonf2501(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2501'
+
+
+class Boletonf25090(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25090'
+
+
+class Boletonf25117(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25117'
+
+
+class Boletonf2516(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2516'
+
+
+class Boletonf2517(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2517'
+
+
+class Boletonf25177(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25177'
+
+
+class Boletonf25178(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25178'
+
+
+class Boletonf25183(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25183'
+
+
+class Boletonf25188(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25188'
+
+
+class Boletonf25244(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25244'
+
+
+class Boletonf25286(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25286'
+
+
+class Boletonf25304(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25304'
+
+
+class Boletonf25310(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25310'
+
+
+class Boletonf25336(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25336'
+
+
+class Boletonf25346(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25346'
+
+
+class Boletonf25347(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25347'
+
+
+class Boletonf25383(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25383'
+
+
+class Boletonf25426(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25426'
+
+
+class Boletonf25479(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25479'
+
+
+class Boletonf2552(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2552'
+
+
+class Boletonf25526(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25526'
+
+
+class Boletonf25529(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25529'
+
+
+class Boletonf25643(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25643'
+
+
+class Boletonf25738(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_25738'
+
+
+class Boletonf2577(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2577'
+
+
+class Boletonf2580(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2580'
+
+
+class Boletonf26047(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26047'
+
+
+class Boletonf26164(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26164'
+
+
+class Boletonf26165(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26165'
+
+
+class Boletonf26307(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26307'
+
+
+class Boletonf26589(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26589'
+
+
+class Boletonf26693(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26693'
+
+
+class Boletonf26695(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26695'
+
+
+class Boletonf26744(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26744'
+
+
+class Boletonf26751(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26751'
+
+
+class Boletonf2678(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2678'
+
+
+class Boletonf26848(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26848'
+
+
+class Boletonf26852(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26852'
+
+
+class Boletonf26906(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26906'
+
+
+class Boletonf26928(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26928'
+
+
+class Boletonf26989(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26989'
+
+
+class Boletonf26990(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_26990'
+
+
+class Boletonf27002(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27002'
+
+
+class Boletonf27085(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27085'
+
+
+class Boletonf2712(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2712'
+
+
+class Boletonf27127(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27127'
+
+
+class Boletonf27128(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27128'
+
+
+class Boletonf2715(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2715'
+
+
+class Boletonf27153(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27153'
+
+
+class Boletonf27260(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27260'
+
+
+class Boletonf27273(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27273'
+
+
+class Boletonf27277(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27277'
+
+
+class Boletonf2740(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2740'
+
+
+class Boletonf27462(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27462'
+
+
+class Boletonf27500(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27500'
+
+
+class Boletonf27519(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27519'
+
+
+class Boletonf27539(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27539'
+
+
+class Boletonf27593(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27593'
+
+
+class Boletonf27639(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27639'
+
+
+class Boletonf2777(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2777'
+
+
+class Boletonf27811(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_27811'
+
+
+class Boletonf2786(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2786'
+
+
+class Boletonf2796(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2796'
+
+
+class Boletonf28130(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28130'
+
+
+class Boletonf28146(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28146'
+
+
+class Boletonf28172(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28172'
+
+
+class Boletonf28175(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28175'
+
+
+class Boletonf2833(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2833'
+
+
+class Boletonf28331(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28331'
+
+
+class Boletonf2835(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2835'
+
+
+class Boletonf28373(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28373'
+
+
+class Boletonf28398(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28398'
+
+
+class Boletonf28399(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28399'
+
+
+class Boletonf28409(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28409'
+
+
+class Boletonf28410(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28410'
+
+
+class Boletonf28548(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28548'
+
+
+class Boletonf28550(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28550'
+
+
+class Boletonf28551(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28551'
+
+
+class Boletonf28556(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28556'
+
+
+class Boletonf2858(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2858'
+
+
+class Boletonf28584(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28584'
+
+
+class Boletonf28613(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28613'
+
+
+class Boletonf28651(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28651'
+
+
+class Boletonf28661(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28661'
+
+
+class Boletonf28705(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28705'
+
+
+class Boletonf2876(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2876'
+
+
+class Boletonf2879(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2879'
+
+
+class Boletonf28816(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28816'
+
+
+class Boletonf2883(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2883'
+
+
+class Boletonf28863(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_28863'
+
+
+class Boletonf2899(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2899'
+
+
+class Boletonf29021(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29021'
+
+
+class Boletonf2911(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2911'
+
+
+class Boletonf29180(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29180'
+
+
+class Boletonf2921(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2921'
+
+
+class Boletonf29261(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29261'
+
+
+class Boletonf29264(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29264'
+
+
+class Boletonf2927(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2927'
+
+
+class Boletonf29296(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29296'
+
+
+class Boletonf2930(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2930'
+
+
+class Boletonf2946(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2946'
+
+
+class Boletonf2947(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2947'
+
+
+class Boletonf29510(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29510'
+
+
+class Boletonf29532(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29532'
+
+
+class Boletonf29615(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29615'
+
+
+class Boletonf29638(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29638'
+
+
+class Boletonf29664(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29664'
+
+
+class Boletonf29694(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29694'
+
+
+class Boletonf298(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_298'
+
+
+class Boletonf29894(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29894'
+
+
+class Boletonf29945(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29945'
+
+
+class Boletonf29947(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29947'
+
+
+class Boletonf29951(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_29951'
+
+
+class Boletonf2998(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_2998'
+
+
+class Boletonf30007(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30007'
+
+
+class Boletonf3001(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3001'
+
+
+class Boletonf30031(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30031'
+
+
+class Boletonf30039(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30039'
+
+
+class Boletonf30078(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30078'
+
+
+class Boletonf30143(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30143'
+
+
+class Boletonf30223(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30223'
+
+
+class Boletonf30234(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30234'
+
+
+class Boletonf30243(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30243'
+
+
+class Boletonf3026(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3026'
+
+
+class Boletonf3027(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3027'
+
+
+class Boletonf30479(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30479'
+
+
+class Boletonf30517(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30517'
+
+
+class Boletonf3055(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3055'
+
+
+class Boletonf3056(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3056'
+
+
+class Boletonf30703(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30703'
+
+
+class Boletonf30753(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30753'
+
+
+class Boletonf30790(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30790'
+
+
+class Boletonf30792(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30792'
+
+
+class Boletonf30806(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30806'
+
+
+class Boletonf30829(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30829'
+
+
+class Boletonf30907(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30907'
+
+
+class Boletonf30938(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30938'
+
+
+class Boletonf30942(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30942'
+
+
+class Boletonf30979(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30979'
+
+
+class Boletonf30987(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_30987'
+
+
+class Boletonf3100(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3100'
+
+
+class Boletonf31016(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31016'
+
+
+class Boletonf31032(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31032'
+
+
+class Boletonf3105(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3105'
+
+
+class Boletonf31065(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31065'
+
+
+class Boletonf31133(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31133'
+
+
+class Boletonf31236(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31236'
+
+
+class Boletonf31239(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31239'
+
+
+class Boletonf31242(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31242'
+
+
+class Boletonf31465(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31465'
+
+
+class Boletonf3151(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3151'
+
+
+class Boletonf31554(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31554'
+
+
+class Boletonf3156(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3156'
+
+
+class Boletonf3157(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3157'
+
+
+class Boletonf31596(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31596'
+
+
+class Boletonf31687(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31687'
+
+
+class Boletonf31710(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_31710'
+
+
+class Boletonf318(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_318'
+
+
+class Boletonf3190(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3190'
+
+
+class Boletonf3191(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3191'
+
+
+class Boletonf3210(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3210'
+
+
+class Boletonf3212(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3212'
+
+
+class Boletonf3219(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3219'
+
+
+class Boletonf3228(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3228'
+
+
+class Boletonf3248(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3248'
+
+
+class Boletonf3250(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3250'
+
+
+class Boletonf3258(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3258'
+
+
+class Boletonf3284(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3284'
+
+
+class Boletonf3298(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3298'
+
+
+class Boletonf3306(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3306'
+
+
+class Boletonf3316(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3316'
+
+
+class Boletonf335(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_335'
+
+
+class Boletonf3371(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3371'
+
+
+class Boletonf3407(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3407'
+
+
+class Boletonf3491(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3491'
+
+
+class Boletonf3513(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3513'
+
+
+class Boletonf354(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_354'
+
+
+class Boletonf3590(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3590'
+
+
+class Boletonf3710(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3710'
+
+
+class Boletonf3795(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3795'
+
+
+class Boletonf3841(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3841'
+
+
+class Boletonf385(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_385'
+
+
+class Boletonf391(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_391'
+
+
+class Boletonf3938(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_3938'
+
+
+class Boletonf4008(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4008'
+
+
+class Boletonf4151(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4151'
+
+
+class Boletonf4178(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4178'
+
+
+class Boletonf4318(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4318'
+
+
+class Boletonf4324(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4324'
+
+
+class Boletonf4337(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4337'
+
+
+class Boletonf4371(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4371'
+
+
+class Boletonf4389(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4389'
+
+
+class Boletonf4409(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4409'
+
+
+class Boletonf4441(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4441'
+
+
+class Boletonf4444(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4444'
+
+
+class Boletonf4554(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4554'
+
+
+class Boletonf4555(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4555'
+
+
+class Boletonf4820(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4820'
+
+
+class Boletonf4885(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4885'
+
+
+class Boletonf4906(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4906'
+
+
+class Boletonf4960(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4960'
+
+
+class Boletonf4993(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_4993'
+
+
+class Boletonf5007(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5007'
+
+
+class Boletonf5029(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5029'
+
+
+class Boletonf5076(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5076'
+
+
+class Boletonf5118(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5118'
+
+
+class Boletonf5143(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5143'
+
+
+class Boletonf5154(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5154'
+
+
+class Boletonf5220(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5220'
+
+
+class Boletonf5280(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5280'
+
+
+class Boletonf5286(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5286'
+
+
+class Boletonf5300(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5300'
+
+
+class Boletonf5313(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5313'
+
+
+class Boletonf5340(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5340'
+
+
+class Boletonf5366(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5366'
+
+
+class Boletonf5367(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+    ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_5367'
+
+
+class Boletonf564(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_564'
+
+
+class Boletonf579(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_579'
+
+
+class Boletonf641(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_641'
+
+
+class Boletonf669(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_669'
+
+
+class Boletonf687(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_687'
+
+
+class Boletonf697(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_697'
+
+
+class Boletonf734(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_734'
+
+
+class Boletonf734Verificar(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_734_verificar'
+
+
+class Boletonf747(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_747'
+
+
+class Boletonf760(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_760'
+
+
+class Boletonf777(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_777'
+
+
+class Boletonf779(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_779'
+
+
+class Boletonf794(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_794'
+
+
+class Boletonf795(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_795'
+
+
+class Boletonf831(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_831'
+
+
+class Boletonf869(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_869'
+
+
+class Boletonf915(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_915'
+
+
+class Boletonf948(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_948'
+
+
+class Boletonf985(models.Model):
+    nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
+    data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
+    venc_bol = models.DateTimeField(db_column='Venc_Bol', blank=True, null=True)  # Field name made lowercase.
+    numdoc_bol = models.BigIntegerField(db_column='NumDoc_Bol', blank=True, null=True)  # Field name made lowercase.
+    val_bol = models.CharField(db_column='Val_Bol', max_length=53, blank=True, null=True)  # Field name made lowercase.
+    sac_bol = models.CharField(db_column='Sac_Bol', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    end_bol = models.CharField(db_column='End_Bol', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cep_bol = models.CharField(db_column='Cep_Bol', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    bair_bol = models.CharField(db_column='Bair_Bol', max_length=12, blank=True, null=True)  # Field name made lowercase.
+    cid_bol = models.CharField(db_column='Cid_Bol', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    uf_bol = models.CharField(db_column='UF_Bol', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    pes_bol = models.CharField(db_column='Pes_Bol', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'BOLETONF_985'
+
+
 class BoletosData(models.Model):
     nnum_bol = models.BigIntegerField(db_column='NNum_Bol')  # Field name made lowercase.
     data_bol = models.DateTimeField(db_column='Data_Bol', blank=True, null=True)  # Field name made lowercase.
@@ -272,6 +8637,7 @@ class BoletosDataNfe(models.Model):
     cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
     env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
     ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+    cod_bco = models.IntegerField(db_column='COD_BCO', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -336,6 +8702,7 @@ class BoletosMidiaNfe(models.Model):
     cnpj_bol = models.CharField(db_column='CNPJ_Bol', max_length=14, blank=True, null=True)  # Field name made lowercase.
     env_bol = models.NullBooleanField(db_column='Env_Bol')  # Field name made lowercase.
     ind_tip_nfe_srv = models.NullBooleanField(db_column='IND_TIP_NFE_SRV')  # Field name made lowercase.
+    cod_bco = models.IntegerField(db_column='COD_BCO', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -1302,6 +9669,7 @@ class ContatosPros(models.Model):
 
 class Contrato(models.Model):
     cod_contrato = models.BigAutoField(db_column='COD_CONTRATO', primary_key=True)  # Field name made lowercase.
+    cod_tip_cont = models.ForeignKey('TipoContrato', models.DO_NOTHING, db_column='COD_TIP_CONT')  # Field name made lowercase.
     num_contrato = models.CharField(db_column='NUM_CONTRATO', max_length=11)  # Field name made lowercase.
     empresa = models.CharField(db_column='EMPRESA', max_length=1)  # Field name made lowercase.
     data_criacao = models.DateTimeField(db_column='DATA_CRIACAO')  # Field name made lowercase.
@@ -1314,6 +9682,7 @@ class Contrato(models.Model):
 class ContratoCliente(models.Model):
     cod_contrato = models.ForeignKey(Contrato, models.DO_NOTHING, db_column='COD_CONTRATO')  # Field name made lowercase.
     cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_unid_neg = models.ForeignKey('UnidadeNegocio', models.DO_NOTHING, db_column='COD_UNID_NEG')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -1763,7 +10132,7 @@ class EmailNfe(models.Model):
     empresa_nf_saida = models.CharField(db_column='EMPRESA_NF_SAIDA', max_length=1, blank=True, null=True)  # Field name made lowercase.
     data_env = models.DateTimeField(db_column='DATA_ENV', blank=True, null=True)  # Field name made lowercase.
     usuario = models.CharField(db_column='USUARIO', max_length=30, blank=True, null=True)  # Field name made lowercase.
-    email_cli = models.CharField(db_column='Email_Cli', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    email_cli = models.CharField(db_column='Email_Cli', max_length=512, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -1778,6 +10147,16 @@ class Emailsnaoenviados(models.Model):
         db_table = 'EmailsNaoEnviados'
 
 
+class Embalagem2(models.Model):
+    faixai_peso = models.IntegerField(db_column='FaixaI_Peso', blank=True, null=True)  # Field name made lowercase.
+    faixaf_peso = models.IntegerField(db_column='FaixaF_Peso', blank=True, null=True)  # Field name made lowercase.
+    embal_peso = models.IntegerField(db_column='Embal_Peso', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Embalagem2'
+
+
 class EmbalagemCorrecao(models.Model):
     faixai_peso = models.IntegerField(db_column='FaixaI_Peso', blank=True, null=True)  # Field name made lowercase.
     faixaf_peso = models.IntegerField(db_column='FaixaF_Peso', blank=True, null=True)  # Field name made lowercase.
@@ -1786,6 +10165,18 @@ class EmbalagemCorrecao(models.Model):
     class Meta:
         managed = False
         db_table = 'Embalagem_Correcao'
+
+
+class FaltasFunc(models.Model):
+    cod_func = models.ForeignKey('Funcionarios', models.DO_NOTHING, db_column='COD_FUNC')  # Field name made lowercase.
+    data_falta = models.DateTimeField(db_column='DATA_FALTA')  # Field name made lowercase.
+    atest_falta = models.BooleanField(db_column='ATEST_FALTA')  # Field name made lowercase.
+    obs_falta = models.TextField(db_column='OBS_FALTA', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'FALTAS_FUNC'
+        unique_together = (('cod_func', 'data_falta'),)
 
 
 class Fluxocaixa(models.Model):
@@ -4864,6 +13255,7 @@ class Os(models.Model):
     tiposubst_os = models.CharField(db_column='TIPOSUBST_OS', max_length=3, blank=True, null=True)  # Field name made lowercase.
     descsuframa_os = models.NullBooleanField(db_column='DESCSUFRAMA_OS')  # Field name made lowercase.
     cod_contrato = models.BigIntegerField(db_column='COD_CONTRATO', blank=True, null=True)  # Field name made lowercase.
+    cod_unid_neg = models.BigIntegerField(db_column='COD_UNID_NEG', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -5099,6 +13491,25 @@ class PrecosEsedex(models.Model):
     class Meta:
         managed = False
         db_table = 'PRECOS_ESEDEX'
+
+
+class PrecosEsedexOld(models.Model):
+    peso_ini = models.BigIntegerField(db_column='PESO_INI', blank=True, null=True)  # Field name made lowercase.
+    peso_fim = models.BigIntegerField(db_column='PESO_FIM', blank=True, null=True)  # Field name made lowercase.
+    grandesp = models.DecimalField(db_column='GRANDESP', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    estadualsp = models.DecimalField(db_column='ESTADUALSP', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    mgprrjsc = models.DecimalField(db_column='MGPRRJSC', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    mgprrjsc_int = models.DecimalField(db_column='MGPRRJSC_INT', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dfesgomsrs = models.DecimalField(db_column='DFESGOMSRS', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dfesgomsrs_int = models.DecimalField(db_column='DFESGOMSRS_INT', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    albamtpbpeseto = models.DecimalField(db_column='ALBAMTPBPESETO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    albamtpbpeseto_int = models.DecimalField(db_column='ALBAMTPBPESETO_INT', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    amcemapapirn = models.DecimalField(db_column='AMCEMAPAPIRN', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    amcemapapirn_int = models.DecimalField(db_column='AMCEMAPAPIRN_INT', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'PRECOS_ESEDEX_OLD'
 
 
 class PrecosLaercio(models.Model):
@@ -5607,6 +14018,33 @@ class SedexConv(models.Model):
         db_table = 'SEDEX_CONV'
 
 
+class SedexConvOld(models.Model):
+    faixai_peso = models.BigIntegerField(db_column='FAIXAI_PESO')  # Field name made lowercase.
+    faixaf_peso = models.BigIntegerField(db_column='FAIXAF_PESO')  # Field name made lowercase.
+    estado_sco = models.DecimalField(db_column='ESTADO_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    mgprrjsc_sco = models.DecimalField(db_column='MGPRRJSC_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    mgprrjsc_int_sco = models.DecimalField(db_column='MGPRRJSC_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dfesmsrs_sco = models.DecimalField(db_column='DFESMSRS_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dfesmsrs_int_sco = models.DecimalField(db_column='DFESMSRS_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    go_sco = models.DecimalField(db_column='GO_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    go_int_sco = models.DecimalField(db_column='GO_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    bamtto_sco = models.DecimalField(db_column='BAMTTO_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    bamtto_int_sco = models.DecimalField(db_column='BAMTTO_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    alse_sco = models.DecimalField(db_column='ALSE_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    alse_int_sco = models.DecimalField(db_column='ALSE_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pbpepiro_sco = models.DecimalField(db_column='PBPEPIRO_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pbpepiro_int_sco = models.DecimalField(db_column='PBPEPIRO_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    acapamcemaparn_sco = models.DecimalField(db_column='ACAPAMCEMAPARN_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    acapamcemaparn_int_sco = models.DecimalField(db_column='ACAPAMCEMAPARN_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    rr_sco = models.DecimalField(db_column='RR_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    rr_int_sco = models.DecimalField(db_column='RR_INT_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    local_sco = models.DecimalField(db_column='LOCAL_SCO', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'SEDEX_CONV_OLD'
+
+
 class SedexHoje(models.Model):
     peso_ini = models.IntegerField(db_column='Peso_INI')  # Field name made lowercase.
     peso_fin = models.IntegerField(db_column='Peso_FIN')  # Field name made lowercase.
@@ -5853,6 +14291,74 @@ class Tabelaprodutos(models.Model):
         db_table = 'TABELAPRODUTOS'
 
 
+class Telemarketing(models.Model):
+    cod_at = models.BigIntegerField(db_column='COD_AT', primary_key=True)  # Field name made lowercase.
+    nome_at = models.CharField(db_column='NOME_AT', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pes_at = models.CharField(db_column='PES_AT', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    contato_at = models.CharField(db_column='CONTATO_AT', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    email_at = models.CharField(db_column='EMAIL_AT', max_length=41, blank=True, null=True)  # Field name made lowercase.
+    ddd_at = models.CharField(db_column='DDD_AT', max_length=2, blank=True, null=True)  # Field name made lowercase.
+    tel_at = models.CharField(db_column='TEL_AT', max_length=9, blank=True, null=True)  # Field name made lowercase.
+    obs_at = models.TextField(db_column='OBS_AT', blank=True, null=True)  # Field name made lowercase.
+    cod_banco_at = models.IntegerField(db_column='COD_BANCO_AT', blank=True, null=True)  # Field name made lowercase.
+    dataincl_mail = models.DateTimeField(db_column='DATAINCL_MAIL', blank=True, null=True)  # Field name made lowercase.
+    cod_ass = models.IntegerField(db_column='COD_ASS', blank=True, null=True)  # Field name made lowercase.
+    cpf_at = models.CharField(db_column='CPF_AT', max_length=14, blank=True, null=True)  # Field name made lowercase.
+    cnpj_at = models.CharField(db_column='CNPJ_AT', max_length=18, blank=True, null=True)  # Field name made lowercase.
+    cod_tel = models.BigIntegerField(db_column='COD_TEL', blank=True, null=True)  # Field name made lowercase.
+    rec_info = models.NullBooleanField(db_column='REC_INFO')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TELEMARKETING'
+
+
+class TempCompra(models.Model):
+    cod_tmc = models.BigIntegerField(db_column='COD_TMC')  # Field name made lowercase.
+    cod_forn = models.BigIntegerField(db_column='COD_FORN')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    qtde_tmc = models.IntegerField(db_column='QTDE_TMC', blank=True, null=True)  # Field name made lowercase.
+    valor_tmc = models.DecimalField(db_column='VALOR_TMC', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ipi_tmc = models.FloatField(db_column='IPI_TMC', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TEMP_COMPRA'
+        unique_together = (('cod_tmc', 'cod_forn', 'cod_prod'),)
+
+
+class TempCompraServ(models.Model):
+    cod_tmc = models.BigIntegerField(db_column='COD_TMC')  # Field name made lowercase.
+    cod_pserv = models.BigIntegerField(db_column='COD_PSERV')  # Field name made lowercase.
+    cod_serv_presta = models.BigIntegerField(db_column='COD_SERV_PRESTA')  # Field name made lowercase.
+    qtde_tmc = models.IntegerField(db_column='QTDE_TMC', blank=True, null=True)  # Field name made lowercase.
+    valor_tmc = models.DecimalField(db_column='VALOR_TMC', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TEMP_COMPRA_SERV'
+
+
+class TempEmailRequis(models.Model):
+    destinatario = models.CharField(db_column='DESTINATARIO', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    email_destin = models.CharField(db_column='EMAIL_DESTIN', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    cod_requis = models.BigIntegerField(db_column='COD_REQUIS', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TEMP_EMAIL_REQUIS'
+
+
+class TipoContrato(models.Model):
+    cod_tip_cont = models.BigAutoField(db_column='COD_TIP_CONT', primary_key=True)  # Field name made lowercase.
+    nome_tip_cont = models.CharField(db_column='NOME_TIP_CONT', max_length=30)  # Field name made lowercase.
+    desc_tipo_cont = models.CharField(db_column='DESC_TIPO_CONT', max_length=200)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TIPO_CONTRATO'
+
+
 class TipoEnvioEmail(models.Model):
     cod_tip = models.BigIntegerField(blank=True, null=True)
     desc_tip = models.CharField(max_length=40, blank=True, null=True)
@@ -5896,6 +14402,42 @@ class TipoPagto(models.Model):
     class Meta:
         managed = False
         db_table = 'TIPO_PAGTO'
+
+
+class TmpInventarioData19122014(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    qtde_data = models.BigIntegerField(db_column='QTDE_DATA', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TMP_INVENTARIO_DATA_19122014'
+
+
+class TmpInventarioMidia19122014(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    qtde_midia = models.BigIntegerField(db_column='QTDE_MIDIA', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TMP_INVENTARIO_MIDIA_19122014'
+
+
+class TmpInventarioTechcd01012013(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    qtde_tech = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'TMP_INVENTARIO_TECHCD_01012013'
+
+
+class TmpInventarioTechcd19122014(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    qtde_tech = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'TMP_INVENTARIO_TECHCD_19122014'
 
 
 class Torpedos(models.Model):
@@ -5955,6 +14497,58 @@ class TrocasAndamento(models.Model):
         db_table = 'TROCAS_ANDAMENTO'
 
 
+class TempResumo(models.Model):
+    f1 = models.BigIntegerField(db_column='F1', blank=True, null=True)  # Field name made lowercase.
+    código_do_cliente = models.BigIntegerField(db_column='código do cliente', blank=True, null=True)  # Field renamed to remove unsuitable characters.
+    contato = models.CharField(max_length=255, blank=True, null=True)
+    vendedora = models.CharField(db_column='Vendedora', max_length=255, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Temp_Resumo'
+
+
+class TempSaidas(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    desc_prod = models.CharField(db_column='Desc_Prod', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    qtde_retirar = models.BigIntegerField(db_column='QTDE_Retirar', blank=True, null=True)  # Field name made lowercase.
+    qtde_retirada = models.BigIntegerField(db_column='QTDE_Retirada', blank=True, null=True)  # Field name made lowercase.
+    responsavel = models.CharField(db_column='Responsavel', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    cod_os = models.BigIntegerField(blank=True, null=True)
+    nome_cli = models.CharField(max_length=100, blank=True, null=True)
+    obs_os = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Temp_Saidas'
+
+
+class TempSaidasjhonatan(models.Model):
+    cod_prod = models.BigIntegerField(blank=True, null=True)
+    desc_prod = models.CharField(db_column='Desc_Prod', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    qtde_retirar = models.BigIntegerField(db_column='QTDE_Retirar', blank=True, null=True)  # Field name made lowercase.
+    qtde_retirada = models.BigIntegerField(db_column='QTDE_Retirada', blank=True, null=True)  # Field name made lowercase.
+    responsavel = models.CharField(db_column='Responsavel', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    cod_os = models.BigIntegerField(blank=True, null=True)
+    nome_cli = models.CharField(max_length=100, blank=True, null=True)
+    obs_os = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Temp_SaidasJHONATAN'
+
+
+class UnidadeNegocio(models.Model):
+    cod_unid_neg = models.BigAutoField(db_column='COD_UNID_NEG', primary_key=True)  # Field name made lowercase.
+    nivel = models.CharField(db_column='NIVEL', max_length=10)  # Field name made lowercase.
+    nome_unid_neg = models.CharField(db_column='NOME_UNID_NEG', max_length=30)  # Field name made lowercase.
+    desc_unid_nego = models.CharField(db_column='DESC_UNID_NEGO', max_length=200)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'UNIDADE_NEGOCIO'
+
+
 class Usuarios(models.Model):
     nome_user = models.CharField(db_column='NOME_USER', primary_key=True, max_length=30)  # Field name made lowercase.
     senha_user = models.CharField(db_column='SENHA_USER', max_length=10, blank=True, null=True)  # Field name made lowercase.
@@ -5969,6 +14563,93 @@ class Usuarios(models.Model):
         db_table = 'USUARIOS'
 
 
+class Zzrelatorio(models.Model):
+    cod_nf_saida = models.BigIntegerField()
+    cod_os = models.BigIntegerField()
+    cod_cli = models.BigIntegerField(blank=True, null=True)
+    cod_vend = models.BigIntegerField(blank=True, null=True)
+    canc_nf_saida = models.NullBooleanField()
+    dataemis_nf_saida = models.DateTimeField(blank=True, null=True)
+    cod_nat = models.IntegerField(blank=True, null=True)
+    total_nf_saida = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)
+    ativo_os_nf = models.BooleanField()
+    empresa_nf_saida = models.CharField(max_length=1, blank=True, null=True)
+    modelo_nf = models.CharField(max_length=1, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ZZRELATORIO'
+
+
+class A(models.Model):
+    cod_os = models.FloatField(db_column='COD_OS', blank=True, null=True)  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    contato_cli = models.CharField(db_column='CONTATO_CLI', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    endereco = models.CharField(db_column='ENDERECO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    numero = models.FloatField(db_column='NUMERO', blank=True, null=True)  # Field name made lowercase.
+    bairro = models.CharField(db_column='Bairro', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    cidade = models.CharField(db_column='Cidade', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    estado = models.CharField(db_column='Estado', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    cep = models.CharField(db_column='CEP', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    departamento_conta = models.CharField(db_column='Departamento_CONTA', max_length=255, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'a'
+
+
+class Aa(models.Model):
+    produto = models.FloatField(db_column='Produto', blank=True, null=True)  # Field name made lowercase.
+    f2 = models.CharField(db_column='F2', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    saldo_em_31_12_2010 = models.FloatField(db_column='Saldo em 31/12/2010', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    custo_do_ultimo_pedido_de_compra_r_field = models.DecimalField(db_column='Custo do ultimo pedido de compra*(R$)', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    f5 = models.CharField(db_column='F5', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    f6 = models.CharField(db_column='F6', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    f7 = models.CharField(db_column='F7', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    f8 = models.CharField(db_column='F8', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    f9 = models.CharField(db_column='F9', max_length=255, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'aa'
+
+
+class Apagar(models.Model):
+    cod_nf_saida = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'apagar'
+
+
+class BkpMov(models.Model):
+    cod_prod = models.BigIntegerField(db_column='COD_PROD', blank=True, null=True)  # Field name made lowercase.
+    cod_ref = models.IntegerField(db_column='COD_REF', blank=True, null=True)  # Field name made lowercase.
+    status_mov = models.CharField(db_column='STATUS_MOV', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    data_mov = models.DateTimeField(db_column='DATA_MOV', blank=True, null=True)  # Field name made lowercase.
+    qtde_mov = models.IntegerField(db_column='QTDE_MOV', blank=True, null=True)  # Field name made lowercase.
+    nf_mov = models.CharField(db_column='NF_MOV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    saldoacum_mov = models.FloatField(db_column='SALDOACUM_MOV', blank=True, null=True)  # Field name made lowercase.
+    func_mov = models.CharField(db_column='FUNC_MOV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    maq_mov = models.CharField(db_column='MAQ_MOV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    usu_mov = models.CharField(db_column='USU_MOV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'bkp_mov'
+
+
+class Brinde(models.Model):
+    cod_cli = models.FloatField(blank=True, null=True)
+    nome_cli = models.CharField(max_length=255, blank=True, null=True)
+    contato = models.CharField(max_length=255, blank=True, null=True)
+    end_cobranca = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'brinde'
+
+
 class Campanhas(models.Model):
     campanha1 = models.IntegerField(blank=True, null=True)
     campanha2 = models.IntegerField(blank=True, null=True)
@@ -5981,6 +14662,14 @@ class Campanhas(models.Model):
     class Meta:
         managed = False
         db_table = 'campanhas'
+
+
+class CliSolange(models.Model):
+    cod_cli = models.FloatField(db_column='Cod_cli', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'cli_Solange'
 
 
 class Clinicas(models.Model):
@@ -6005,6 +14694,32 @@ class Clinicas(models.Model):
         managed = False
         db_table = 'clinicas'
 
+
+class ClinicasTmp(models.Model):
+    cod_cli = models.FloatField(blank=True, null=True)
+    nome = models.CharField(db_column='NOME', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    emailgeral = models.CharField(db_column='EMAILGERAL', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    emailadm = models.CharField(db_column='EMAILADM', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    emailcompras = models.CharField(db_column='EMAILCOMPRAS', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    telefone = models.CharField(db_column='TELEFONE', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    fax = models.CharField(db_column='FAX', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    site = models.CharField(db_column='SITE', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    endereco = models.CharField(db_column='ENDERECO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    bairro = models.CharField(db_column='BAIRRO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    cidade = models.CharField(db_column='CIDADE', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    estado = models.CharField(db_column='ESTADO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    cep = models.CharField(db_column='CEP', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    administrador = models.CharField(db_column='ADMINISTRADOR', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    hosp_gestao = models.CharField(db_column='HOSP_GESTAO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    hosp_tipo = models.CharField(db_column='HOSP_TIPO', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    leitos = models.FloatField(db_column='LEITOS', blank=True, null=True)  # Field name made lowercase.
+    leitosuti = models.FloatField(db_column='LEITOSUTI', blank=True, null=True)  # Field name made lowercase.
+    ccirurgico = models.FloatField(db_column='CCIRURGICO', blank=True, null=True)  # Field name made lowercase.
+    cnpj = models.FloatField(db_column='CNPJ', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'clinicas_tmp'
 
 
 class CmpNfe(models.Model):
@@ -6076,6 +14791,60 @@ class Dipj(models.Model):
         db_table = 'dipj'
 
 
+class Dipj2(models.Model):
+    cnpj_cli = models.CharField(max_length=18, blank=True, null=True)
+    total = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dipj2'
+
+
+class DjangoContentType(models.Model):
+    name = models.CharField(max_length=100)
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class Dtproperties(models.Model):
+    id = models.AutoField()
+    objectid = models.IntegerField(blank=True, null=True)
+    property = models.CharField(max_length=64)
+    value = models.CharField(max_length=255, blank=True, null=True)
+    uvalue = models.CharField(max_length=255, blank=True, null=True)
+    lvalue = models.BinaryField(blank=True, null=True)
+    version = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'dtproperties'
+        unique_together = (('id', 'property'),)
+
+
+class Email2(models.Model):
+    col001 = models.CharField(db_column='Col001', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    id = models.AutoField()
+
+    class Meta:
+        managed = False
+        db_table = 'email2'
+
+
 class EmailInativo(models.Model):
     cod_cli = models.IntegerField(blank=True, null=True)
     data = models.DateTimeField(blank=True, null=True)
@@ -6129,6 +14898,462 @@ class ItmNfeEntradaPagto(models.Model):
         managed = False
         db_table = 'itm_nfe_entrada_PAGTO'
 
+
+class ItmPesotechcd(models.Model):
+    cod_os = models.BigIntegerField(primary_key=True)
+    peso_tech = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'itm_pesotechcd'
+
+
+class ItmTipoEnvioSkype(models.Model):
+    cod_tip = models.BigIntegerField(db_column='COD_TIP', blank=True, null=True)  # Field name made lowercase.
+    apelido_skype = models.CharField(db_column='APELIDO_SKYPE', max_length=40, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_tipo_envio_skype'
+
+
+class ItmVendas36268(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas36268'
+
+
+class ItmVendas37813(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas37813'
+
+
+class ItmVendas38437(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas38437'
+
+
+class ItmVendas39221(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas39221'
+
+
+class ItmVendas40045(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas40045'
+
+
+class ItmVendas40489(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas40489'
+
+
+class ItmVendas41684(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas41684'
+
+
+class ItmVendas41967(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas41967'
+
+
+class ItmVendas42673(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas42673'
+
+
+class ItmVendas42825(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas42825'
+
+
+class ItmVendas42990(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas42990'
+
+
+class ItmVendas43135(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas43135'
+
+
+class ItmVendas45534(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas45534'
+
+
+class ItmVendas46283(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas46283'
+
+
+class ItmVendas46358(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas46358'
+
+
+class ItmVendas47995(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas47995'
+
+
+class ItmVendas48006(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas48006'
+
+
+class ItmVendas48378(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas48378'
+
+
+class ItmVendas49048(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas49048'
+
+
+class ItmVendas49373(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas49373'
+
+
+class ItmVendas49732(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas49732'
+
+
+class ItmVendas49758(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas49758'
+
+
+class ItmVendas50122(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas50122'
+
+
+class ItmVendas50515(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas50515'
+
+
+class ItmVendas53004(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas53004'
+
+
+class ItmVendas54037(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas54037'
+
+
+class ItmVendas54148(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas54148'
+
+
+class ItmVendas55766(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas55766'
+
+
+class ItmVendas56604(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas56604'
+
+
+class ItmVendas57006(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas57006'
+
+
+class ItmVendas61171(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas61171'
+
+
+class ItmVendas63447(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas63447'
+
+
+class ItmVendas64516(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas64516'
+
+
+class ItmVendas65473(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas65473'
+
+
+class ItmVendas68513(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas68513'
+
+
+class ItmVendas68623(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas68623'
+
+
+class ItmVendas69446(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas69446'
+
+
+class ItmVendas71101(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas71101'
+
+
+class ItmVendas76053(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    cod_prod = models.BigIntegerField(db_column='COD_PROD')  # Field name made lowercase.
+    desc_prod = models.CharField(db_column='DESC_PROD', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    maxqtde_os = models.FloatField(db_column='MaxQTDE_OS')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'itm_vendas76053'
+
+
+class Log(models.Model):
+    mail = models.CharField(db_column='Mail', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    status = models.CharField(db_column='Status', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    id = models.FloatField(db_column='ID', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'log'
 
 
 class LogRemessa(models.Model):
@@ -6217,6 +15442,16 @@ class NfeEntradaMidia(models.Model):
         db_table = 'nfe_ENTRADA_midia'
 
 
+class NfeXmlsender(models.Model):
+    cod_nf_saida = models.BigIntegerField(db_column='Cod_NF_Saida')  # Field name made lowercase.
+    data_send = models.DateTimeField(db_column='Data_Send', blank=True, null=True)  # Field name made lowercase.
+    empresa_nf_saida = models.CharField(db_column='Empresa_nf_Saida', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'nfe_XMLSender'
+
+
 class NfeEntrada(models.Model):
     cod_nf_entrada = models.BigIntegerField(db_column='COD_NF_ENTRADA')  # Field name made lowercase.
     numdoc_nf_entrada = models.CharField(db_column='NUMDOC_NF_ENTRADA', max_length=20)  # Field name made lowercase.
@@ -6253,6 +15488,29 @@ class NfeEntrada(models.Model):
     class Meta:
         managed = False
         db_table = 'nfe_entrada'
+
+
+class OpcaoExibicao(models.Model):
+    nomeuser_opcao_and = models.CharField(max_length=30, blank=True, null=True)
+    exibir_opcao_and = models.NullBooleanField()
+    opcao_exibicao_and = models.NullBooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'opcao_exibicao'
+
+
+class Sysdiagrams(models.Model):
+    name = models.CharField(max_length=128)
+    principal_id = models.IntegerField()
+    diagram_id = models.AutoField(primary_key=True)
+    version = models.IntegerField(blank=True, null=True)
+    definition = models.BinaryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'sysdiagrams'
+        unique_together = (('principal_id', 'name'),)
 
 
 class Tblaliqst(models.Model):
@@ -6344,3 +15602,1047 @@ class TempLojaPedido(models.Model):
         db_table = 'temp_loja_pedido'
 
 
+class Vendas36268(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas36268'
+
+
+class Vendas37813(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas37813'
+
+
+class Vendas38437(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas38437'
+
+
+class Vendas39221(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas39221'
+
+
+class Vendas40045(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas40045'
+
+
+class Vendas40489(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas40489'
+
+
+class Vendas40546(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas40546'
+
+
+class Vendas41684(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas41684'
+
+
+class Vendas41687(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas41687'
+
+
+class Vendas41752(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas41752'
+
+
+class Vendas41967(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas41967'
+
+
+class Vendas42673(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas42673'
+
+
+class Vendas42825(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas42825'
+
+
+class Vendas42990(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas42990'
+
+
+class Vendas43135(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas43135'
+
+
+class Vendas45534(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas45534'
+
+
+class Vendas46084(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas46084'
+
+
+class Vendas46283(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas46283'
+
+
+class Vendas46355(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas46355'
+
+
+class Vendas46358(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas46358'
+
+
+class Vendas47629(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas47629'
+
+
+class Vendas47995(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas47995'
+
+
+class Vendas48006(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas48006'
+
+
+class Vendas48378(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas48378'
+
+
+class Vendas48498(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas48498'
+
+
+class Vendas49048(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas49048'
+
+
+class Vendas49373(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas49373'
+
+
+class Vendas49732(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas49732'
+
+
+class Vendas49758(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas49758'
+
+
+class Vendas50104(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas50104'
+
+
+class Vendas50122(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas50122'
+
+
+class Vendas50515(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas50515'
+
+
+class Vendas50597(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas50597'
+
+
+class Vendas50967(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas50967'
+
+
+class Vendas51251(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas51251'
+
+
+class Vendas51828(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas51828'
+
+
+class Vendas52006(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas52006'
+
+
+class Vendas52413(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas52413'
+
+
+class Vendas52557(models.Model):
+    cod_os = models.BigIntegerField(db_column='Cod_Os')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='Nome_Cli', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='Nome_Func', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    data1_os = models.DateTimeField(db_column='Data1_Os', blank=True, null=True)  # Field name made lowercase.
+    val_pagto = models.DecimalField(db_column='Val_Pagto', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    real_pagto = models.DecimalField(db_column='Real_Pagto', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    quemquit_os = models.CharField(db_column='QuemQuit_Os', max_length=30, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas52557'
+
+
+class Vendas52600(models.Model):
+    cod_os = models.BigIntegerField(db_column='Cod_Os')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='Nome_Cli', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='Nome_Func', max_length=40, blank=True, null=True)  # Field name made lowercase.
+    data1_os = models.DateTimeField(db_column='Data1_Os', blank=True, null=True)  # Field name made lowercase.
+    val_pagto = models.DecimalField(db_column='Val_Pagto', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    real_pagto = models.DecimalField(db_column='Real_Pagto', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    quemquit_os = models.CharField(db_column='QuemQuit_Os', max_length=30, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas52600'
+
+
+class Vendas52741(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas52741'
+
+
+class Vendas53004(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas53004'
+
+
+class Vendas54037(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas54037'
+
+
+class Vendas54148(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas54148'
+
+
+class Vendas55307(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas55307'
+
+
+class Vendas55766(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas55766'
+
+
+class Vendas56604(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas56604'
+
+
+class Vendas57006(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas57006'
+
+
+class Vendas58509(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas58509'
+
+
+class Vendas61171(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas61171'
+
+
+class Vendas62157(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas62157'
+
+
+class Vendas63447(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas63447'
+
+
+class Vendas64516(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas64516'
+
+
+class Vendas65473(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas65473'
+
+
+class Vendas68513(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas68513'
+
+
+class Vendas68623(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas68623'
+
+
+class Vendas69446(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas69446'
+
+
+class Vendas71101(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas71101'
+
+
+class Vendas76053(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas76053'
+
+
+class Vendas77649(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas77649'
+
+
+class Vendas78063(models.Model):
+    cod_cli = models.BigIntegerField(db_column='COD_CLI')  # Field name made lowercase.
+    nome_cli = models.CharField(db_column='NOME_CLI', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    ultcod_os = models.BigIntegerField(db_column='ULTCOD_OS')  # Field name made lowercase.
+    ultval_pagto = models.DecimalField(db_column='ULTVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    ultdata1_os = models.DateTimeField(db_column='ULTDATA1_OS')  # Field name made lowercase.
+    contarcod_os = models.IntegerField(db_column='CONTARCOD_OS')  # Field name made lowercase.
+    somaval_pagto = models.DecimalField(db_column='SOMAVAL_PAGTO', max_digits=19, decimal_places=4)  # Field name made lowercase.
+    nome_func = models.CharField(db_column='NOME_FUNC', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    porc_vendas = models.FloatField(db_column='PORC_VENDAS')  # Field name made lowercase.
+    pes_cli = models.CharField(db_column='PES_CLI', max_length=1, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'vendas78063'
+
+
+class Zmkt(models.Model):
+    cod_cli = models.BigIntegerField(db_column='Cod_Cli', primary_key=True)  # Field name made lowercase.
+    cliente = models.CharField(db_column='Cliente', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    vend = models.CharField(db_column='Vend', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    tipo = models.CharField(db_column='Tipo', max_length=1, blank=True, null=True)  # Field name made lowercase.
+    vendas = models.DecimalField(db_column='Vendas', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    freq = models.IntegerField(db_column='Freq', blank=True, null=True)  # Field name made lowercase.
+    prod = models.DecimalField(db_column='Prod', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    serv = models.DecimalField(db_column='Serv', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'zMKT'
