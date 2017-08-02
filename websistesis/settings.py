@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import sys
 from decouple import config, Csv
 from django.contrib import messages
-from django.shortcuts import resolve_url as r
+from dj_database_url import parse as dburl
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -102,10 +102,10 @@ AUTHENTICATION_BACKENDS = (
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 # configurar o dj_database_url com decouple | banco teste por enquanto.
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.auth')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.auth'),
+        config('DATABASE_URL', default=default_dburl, cast=default_dburl)
     },
     'techcd': {
         'ENGINE': config('DB_ENGINE'),
@@ -119,8 +119,8 @@ DATABASES = {
             'host_is_server': True,
             'unicode_results': True,
             'extra_params': 'TDS_VERSION=8.0',
-            },
-        }
+        },
+    }
 }
 
 RUNNING_UNIT_TESTS = 'test' in sys.argv
