@@ -104,9 +104,9 @@ AUTHENTICATION_BACKENDS = (
 # configurar o dj_database_url com decouple | banco teste por enquanto.
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.auth')
 DATABASES = {
-    'default': {
-        config('DATABASE_URL', default=default_dburl, cast=dburl)
-    },
+    'default':
+        config('DATABASE_URL', default=default_dburl, cast=dburl),
+
     'techcd': {
         'ENGINE': config('DB_ENGINE'),
         'NAME': config('DB_NAME'),
