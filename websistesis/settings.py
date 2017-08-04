@@ -105,7 +105,7 @@ AUTHENTICATION_BACKENDS = (
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.auth')
 DATABASES = {
     'default': {
-        config('DATABASE_URL', default=default_dburl, cast=default_dburl)
+        config('DATABASE_URL', default=default_dburl, cast=dburl)
     },
     'techcd': {
         'ENGINE': config('DB_ENGINE'),
